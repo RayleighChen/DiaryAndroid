@@ -124,9 +124,9 @@ public class SearchDiaryActivity extends Activity {
 				refresh();
 			}else {
 				diaries.clear();
-				// �������뷨 
+				// 隐藏输入法 
 				InputMethodManager manager = (InputMethodManager) getApplicationContext().getSystemService(Context.INPUT_METHOD_SERVICE); 
-				// ��ʾ�����������뷨 
+				// 显示或者隐藏输入法 
 				manager.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
 			}
 		}
@@ -271,7 +271,7 @@ builder.setItems(new String[]{getString(R.string.share),getString(R.string.trans
 								// TODO Auto-generated method stub
 								diaryDao.deleteAll();
 								refresh();
-								Toast.makeText(SearchDiaryActivity.this, "��Ϣ�����", Toast.LENGTH_SHORT).show();
+								Toast.makeText(SearchDiaryActivity.this, "信息已清空", Toast.LENGTH_SHORT).show();
 								Intent intent = new Intent();
 								intent.setAction("com.android.info.delete");
 								SearchDiaryActivity.this.sendBroadcast(intent);

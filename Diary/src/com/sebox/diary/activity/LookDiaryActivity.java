@@ -84,7 +84,7 @@ public class LookDiaryActivity extends Activity {
 		IntentFilter iFilter = new IntentFilter();
 		iFilter.addAction("com.android.receivemsg");
 		iFilter.setPriority(Integer.MAX_VALUE);
-		// ע��㲥������
+		//// 注册广播接收器
 		registerReceiver(myReceiver, iFilter);
 		setBackground();
 	}
