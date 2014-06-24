@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/detail_diary_info_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/diary_view_bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="48dip"
+        android:background="@drawable/head_blue_background"
+        android:clickable="true" >
+
+        <ImageView
+            android:id="@+id/back_detail_diary"
+            android:layout_width="54dip"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/edit_selector"
+            android:clickable="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/detail_diary_info"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/detail_view_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:hint="@string/title"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/detail_view_date"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="2dp"
+        android:gravity="right"
+        android:hint="@string/date"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/detail_view_info"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="2dp"
+        android:textSize="15dp" />
+
+</LinearLayout>

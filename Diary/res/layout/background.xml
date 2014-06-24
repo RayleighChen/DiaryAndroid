@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/common_black" >
+
+    <ViewFlipper
+        android:id="@+id/flipper"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:focusable="true" >
+
+        <requestFocus />
+    </ViewFlipper>
+
+    <TableLayout
+        android:id="@+id/bg_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:visibility="gone" >
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/backround_set"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/set_bg"
+                android:background="@drawable/layout_selector"
+                android:textSize="18dp" />
+
+            <Button
+                android:id="@+id/backround_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cancel_bg"
+                android:background="@drawable/layout_selector"
+                android:textSize="18dp" />
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.org.android.diary"
+    android:id="@+id/confirm_graphic_pass_layout"
+    android:layout_width="fill_parent"
+    android:background="@drawable/diary_view_bg"
+    android:layout_height="fill_parent" >
+
+    <com.org.android.diary.view.LockPatternView
+        xmlns:app="http://schemas.android.com/apk/res/com.org.android.diary"
+        android:id="@+id/lock_confirm"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null" />
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/last"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/last"
+                android:background="@drawable/layout_selector"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/ok"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/layout_selector"
+                android:text="@string/ok"
+                android:textSize="20dp" />
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>

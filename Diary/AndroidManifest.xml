@@ -5,23 +5,119 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
-        android:targetSdkVersion="19" />
+        android:minSdkVersion="10"
+        android:targetSdkVersion="17" />
 
+    <supports-screens
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >    </uses-permission>
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.rayleigh.diary.MainActivity"
-            android:label="@string/app_name" >
+            android:name=".activity.WelcomeActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activity.AccessActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.AboutActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.HelpActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.SetBackgroundActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.SetRemindActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.AdviceActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.AddDiaryActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.LookDiaryActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.SearchDiaryActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.SetPasswordActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.DetailDiaryInfoActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.GraphicPassSetActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.ConfirmPassActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.CheckPassActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+        </activity>
+        <service android:name=".service.MyService">
+            <intent-filter> 
+                <action android:name="com.rayleigh.diary.service.MY_SERVICE" /> 
+                <category android:name="android.intent.category.default" /> 
+        </intent-filter> 
+        </service>
+        <receiver 
+            android:name=".receiver.MyReceiver">
+            <intent-filter >
+                <action android:name="com.android.system.time"/>
+            </intent-filter>
+        </receiver>
+        
     </application>
 
 </manifest>

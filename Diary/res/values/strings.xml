@@ -1,8 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Diary</string>
+    <string name="app_name">个人日记</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-
+    <string name="access">进入日记</string>
+    <string name="ani_time">250</string>
+    <string name="ani_time2">500</string>
+    <string name="ani_timestartof">150</string>
+	<string name="add_diary">写日记</string>
+	<string name="time">时间</string>
+    <string name="week">星期</string>
+    <string name="title">标题</string>
+    <string name="date">日期</string>
+    <string name="title_hint">请输入您的标题</string>
+    <string name="diary_info_hint">有什么想说的就记下吧。。。。。。</string>
+    <string name="weather">天气</string>
+    <string-array name="weather">
+        <item name="sunny">晴朗</item> 
+        <item name="cloudy">多云</item>
+        <item name="overcast">阴天</item>
+        <item name="rain">降雨</item>
+        <item name="snow">降雪</item> 
+        <item name="hail">冰雹</item> 
+        <item name="smoky">烟雾</item> 
+        <item name="sandstorm">沙尘暴</item>
+    </string-array>
+    <string name="empty_info">日记未写完整，保存失败！</string>
+    <string name="save_success">日记保存成功！</string>
+    <string name="look_diary">我的日记</string>
+    <string name="detail_diary_info">详细日记</string>
+    <string name="op">操作</string>
+    <string name="share">分享</string>
+    <string name="transmit">转发</string>
+    <string name="delete">删除</string>
+    <string name="backups">备份</string>
+    <string name="empty">清空所有</string>
+    <string name="delete_sure">确定要删除吗？删除日记将无法恢复！</string>
+    <string name="ok">确定</string>
+    <string name="delete_over">日记已经删除！</string>
+    <string name="cancel">取消</string>
+    <string name="is_backups">你是否想要备份此日记？</string>
+    <string name="empty_all">确定要清空日记吗？日记将无法恢复!</string>
+    <string name="emptyall">情况所有</string>
+    <string name="prompt">提示</string>
+    <string name="is_add_diary">你还没写日记呢？赶紧去写日记吧！</string>
+    <string name="detail_search_info">日记搜索</string>
+    <string name="password_diary_info">安全密码</string>
+    <string name="set_pass">设置密码:</string>
+    <string name="input_pass">输入密码</string>
+    <string name="confirm_pass">确认密码:</string>
+    <string name="input_confirm_pass">输入验证密码</string>
+    <string name="set_password">设置密码</string>
+    <string name="set">设置</string>
+    <string name="wrong_pass">密码错误，请重试！</string>
+    <string name="pass_set_success">密码设置成功！</string>
+    <string name="dif_pass">密码不一致，设置失败！</string>
+    <string name="pass_cancel">已取消密码！</string>
+    <string name="please_set_password">请设置密码</string>
+    <string name="please_confirm_pass">请确认密码</string>
+    <string name="pass_con_title">密码校验</string>
+    <string name="sleep_on">夜间模式已打开</string>
+    <string name="sleep_up">夜间模式已关闭</string>
+    <string name="quit">退出</string>
+    <string name="is_quit">你确定要退出吗？</string>
+     <!-- Accessibility description sent when user starts drawing a lock pattern. [CHAR LIMIT=NONE] -->
+    <string name="lockscreen_access_pattern_start">Pattern started</string>
+    <!-- Accessibility description sent when the pattern times out and is cleared. [CHAR LIMIT=NONE] -->
+    <string name="lockscreen_access_pattern_cleared">Pattern cleared</string>
+    <!-- Accessibility description sent when user adds a cell to the pattern. [CHAR LIMIT=NONE]  -->
+    <string name="lockscreen_access_pattern_cell_added">Cell added</string>
+    <!-- Accessibility description sent when user completes drawing a pattern. [CHAR LIMIT=NONE] -->
+    <string name="lockscreen_access_pattern_detected">Pattern completed</string>
+    <string name="save_success_sd">数据备份成功！</string>
+    <string name="save_failed_sd">SD卡不存在，保存失败！</string>
+    <string name="emptyed">日记已清空！</string>
+    <string name="about">关于</string>
+    <string name="developer_info">开发者信息</string>
+    <string name="developer">开发者:seeker</string>
+    <string name="qq">QQ:1020118243</string>
+    <string name="email">Email:seeker199291@gmail.com</string>
+    <string name="bbs">CSDN:http://blog.csdn.net/shuipingzildy</string>
+    <string name="version_info">版本信息</string>
+    <string name="version">版本:个人日记 1.0版</string>
+    <string name="version_ex">版本说明:个人日记1.0版有良好的用户体验界面，快速而便捷的写写心情</string>
+    <string name="note">备注:若有需求，会升级版本</string>
+    <string name="help">帮助</string>
+    <string name="help_info">帮助信息</string>
+    <string name="detail_help_info">
+        1.进入应用首先进入欢迎界面，点击"进入日记"即可进入主界面\n
+        2.在主界面可以点击进入"写日记"、"查看日记"、"搜索日记"、"日记加密"、"退出"以及右下角按钮查看更多\n
+        3.进入"写日记"界面即可写日记，返回自动保存日记\n
+        4.进入"查看日记"界面即可查看写过的日记，若没有写过日记，则提示用户写日记\n
+        5.进入"搜索日记"界面即可对日记内容进行搜索\n
+        6.进入"日记加密"界面即可对日记进行加密，有对话框加密和图形加密\n
+        7.点击"退出"时会提示用户是否退出，选择"确定"则退出，否则不退出\n
+        8.点击右下方按钮会弹出弧形菜单，可进入相应操作。如关于、帮助、夜间模式、换背景、设置提醒、意见反馈\n
+        9."换背景"操作，手动换屏，长按图片或者按菜单键按提示操作即可\n
+        10."设置提醒"可以设置提醒写日记的时间\n</string>
+	<string name="set_bg">设置</string>
+	<string name="cancel_bg">取消</string>
+	<string name="remind">设置提醒</string>
+	<string name="cancel_remind">取消提醒</string>
+	<string name="current_time">当前时间:</string>
+	<string name="remind_time">提醒时间:</string>
+	<string name="pass_protect">隐私保护</string>
+	<string name="digital_pass">数字密码</string>
+	<string name="shape_pass">图形密码</string>
+	<string name="no_pass">无密码</string>
+	<string name="notification_title">通知</string>
+	<string name="notification_remind">提醒</string>
+	<string name="notification_info">时间到了，该写日记了哦，亲！O(∩_∩)O~</string>
+	<string name="advice">意见反馈</string>
+	<string name="uname">姓名:</string>
+	<string name="uemail">邮箱:</string>
+	<string name="advice_info">您的建议:</string>
+	<string name="advice_info_hint">您有什么好的意见或建议，有啥就说说吧。期待您的来信。</string>
+	<string name="submit">提交</string>
+	<string name="input_name">请输入您的名字</string>
+	<string name="input_email">请输入您的邮箱</string>
+	<string name="email_pass">密码:</string>
+	<string name="input_email_pass">请输入您的邮箱密码</string>
+	<string name="theme">意见或建议</string>
+	<string name="email_choose">选择邮箱</string>
+	<string name="detail_info">请完整信息！</string>
+	<string name="next">下一步</string>
+	<string name="last">上一步</string>
 </resources>

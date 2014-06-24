@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/remind_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/diary_view_bg" >
+
+    <RelativeLayout
+        android:id="@+id/title_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="48dip"
+        android:background="@drawable/head_blue_background"
+        android:clickable="true" >
+
+        <ImageView
+            android:id="@+id/back_remind"
+            android:layout_width="54dip"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/edit_selector"
+            android:clickable="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/remind"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/set_time_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/title_bar"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/layout_selector"
+        android:orientation="vertical" >
+
+        <AnalogClock
+            android:id="@+id/myclock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <Button
+            android:id="@+id/remind_ok"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/layout_selector"
+            android:text="@string/remind" >
+        </Button>
+
+        <Button
+            android:id="@+id/remind_cancel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/layout_selector"
+            android:text="@string/cancel_remind" >
+        </Button>
+
+        <TextView
+            android:id="@+id/current_time"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="5dp"
+            android:hint="@string/current_time"
+            android:textColor="@color/common_black"
+            android:textSize="20dp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/set_time"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="5dp"
+            android:hint="@string/remind_time"
+            android:textColor="@color/common_black"
+            android:textSize="20dp" >
+        </TextView>
+    </LinearLayout>
+
+</RelativeLayout>

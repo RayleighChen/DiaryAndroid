@@ -16,5 +16,9 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
-
+	<style name="myStyle" parent="android:Widget" />
+    <style name="myStyle.BlackBigText">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/common_black</item>
+    </style>
 </resources>

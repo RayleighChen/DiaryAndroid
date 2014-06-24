@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/add_diary_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/diary_view_bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="48dip"
+        android:background="@drawable/head_blue_background"
+        android:clickable="true" >
+
+        <ImageView
+            android:id="@+id/back_add_diary"
+            android:layout_width="54dip"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/edit_selector"
+            android:clickable="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/add_diary"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="10dp"
+        android:background="@drawable/layout_selector"
+        android:orientation="vertical" >
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+             >
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="@string/time"
+                    android:padding="20dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/week"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="@string/week"
+                    android:padding="20dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="15dp" />
+
+                <Spinner
+                    android:id="@+id/weather"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="20dp" />
+            </TableRow>
+        </TableLayout>
+		<TextView 
+	        android:layout_width="fill_parent"
+	        android:layout_height="2dp"
+	        android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+	        android:background="#FFA500"/>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp">
+            <TextView 
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:text="@string/title"/>
+            <EditText 
+                android:id="@+id/edit_title"
+                android:layout_toRightOf="@+id/title"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:hint="@string/title_hint"/>
+        </RelativeLayout>
+        <EditText
+            android:id="@+id/edit_diary_info"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="top"
+            android:layout_margin="5dp"
+            android:background="@drawable/layout_selector"
+            android:textSize="15sp"
+            android:hint="@string/diary_info_hint"/>
+    </LinearLayout>
+
+</LinearLayout>
