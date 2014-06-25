@@ -24,13 +24,13 @@ public class AdviceActivity extends Activity implements TextWatcher {
 	private EditText userName = null;
 	private AutoCompleteTextView userEmail = null;
 	private EditText adviceInfo = null;
-	/*private EditText emailPass = null;*/
+	/* private EditText emailPass = null; */
 	private AutoTextViewAdapter adapter = null;
 	private SharedPreferences preferences = null;
 	private Button submit = null;
-	private static final String[] AUTO_EMAILS = { "@163.com", "@sina.com",
-			"@qq.com", "@126.com", "@gmail.com", "@apple.com","@sohu.com",
-			"@foxmail.com","@sina.cn","@yahoo.com.cn"};
+	private static final String[] AUTO_EMAILS = {"@163.com", "@sina.com",
+			"@qq.com", "@126.com", "@gmail.com", "@apple.com", "@sohu.com",
+			"@foxmail.com", "@sina.cn", "@yahoo.com.cn"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +46,7 @@ public class AdviceActivity extends Activity implements TextWatcher {
 		back = (ImageView) this.findViewById(R.id.back_advice);
 		userName = (EditText) this.findViewById(R.id.user_name);
 		userEmail = (AutoCompleteTextView) this.findViewById(R.id.user_email);
-		/*emailPass = (EditText)this.findViewById(R.id.user_email_pass);*/
+		/* emailPass = (EditText)this.findViewById(R.id.user_email_pass); */
 		adapter = new AutoTextViewAdapter(this);
 		userEmail.setAdapter(adapter);
 		userEmail.setThreshold(1);// 输入1个字符时就开始检测，默认为2个
@@ -103,18 +103,22 @@ public class AdviceActivity extends Activity implements TextWatcher {
 			if (!userEmail.getText().toString().trim().equals("")
 					&& !userName.getText().toString().trim().equals("")
 					&& !adviceInfo.getText().toString().trim().equals("")) {
-				String myReciver = "seeker199291@gmail.com"; //收件人   
-			    String mySubject = getString(R.string.theme); //主题   
-			    String myBody = adviceInfo.getText().toString().trim()
-			    		+"\n来自于："+userEmail.getText().toString().trim()+"  "+userName.getText().toString().trim();   
-			    Intent myIntent=new Intent(android.content.Intent.ACTION_SEND);  
-	            myIntent.setType("plain/text");//设置邮件格式   
-	            myIntent.putExtra(android.content.Intent.EXTRA_EMAIL, myReciver);  
-	            myIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, mySubject);   
-	            myIntent.putExtra(android.content.Intent.EXTRA_TEXT, myBody);  
-	            startActivity(Intent.createChooser(myIntent, getString(R.string.email_choose)));
-			}else {
-				Toast.makeText(AdviceActivity.this, getString(R.string.detail_info), 0).show();
+				String myReciver = "seeker199291@gmail.com"; // 收件人
+				String mySubject = getString(R.string.theme); // 主题
+				String myBody = adviceInfo.getText().toString().trim()
+						+ "\n来自于：" + userEmail.getText().toString().trim()
+						+ "  " + userName.getText().toString().trim();
+				Intent myIntent = new Intent(android.content.Intent.ACTION_SEND);
+				myIntent.setType("plain/text");// 设置邮件格式
+				myIntent.putExtra(android.content.Intent.EXTRA_EMAIL, myReciver);
+				myIntent.putExtra(android.content.Intent.EXTRA_SUBJECT,
+						mySubject);
+				myIntent.putExtra(android.content.Intent.EXTRA_TEXT, myBody);
+				startActivity(Intent.createChooser(myIntent,
+						getString(R.string.email_choose)));
+			} else {
+				Toast.makeText(AdviceActivity.this,
+						getString(R.string.detail_info), 0).show();
 			}
 		}
 	}
@@ -171,6 +175,6 @@ public class AdviceActivity extends Activity implements TextWatcher {
 	@Override
 	public void onTextChanged(CharSequence s, int start, int before, int count) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }
