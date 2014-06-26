@@ -12,7 +12,6 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
 
-
 public class AutoTextViewAdapter extends BaseAdapter implements Filterable {  
 	  
 	public List<String> mList;  
