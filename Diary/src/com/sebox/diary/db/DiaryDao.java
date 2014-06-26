@@ -2,7 +2,6 @@ package com.sebox.diary.db;
 
 import java.util.List;
 
-import com.sebox.diary.constant.Constant;
 import com.sebox.diary.model.Diary;
 
 import android.content.ContentValues;
