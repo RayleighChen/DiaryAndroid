@@ -2,7 +2,6 @@ package com.sebox.diary.utils;
 
 import java.util.Calendar;
 
-
 public class TimeString {
 	public static String getTime(){
 		long now = System.currentTimeMillis(); //微秒级当前时间  
