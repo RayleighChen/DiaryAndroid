@@ -47,21 +47,21 @@ public class WelcomeActivity extends Activity {
 		rightLayout.setAnimation(rightOutAnimation);
 		// 设置动画监听器
 		leftOutAnimation.setAnimationListener(new AnimationListener() {
-
+			
 			@Override
 			public void onAnimationStart(Animation animation) {
 				// TODO Auto-generated method stub
 			}
-
+			
 			@Override
 			public void onAnimationRepeat(Animation animation) {
 				// TODO Auto-generated method stub
 			}
-
+			
 			@Override
 			public void onAnimationEnd(Animation animation) {
 				// TODO Auto-generated method stub
-				// 结束动画时，隐藏布局
+				//结束动画时，隐藏布局
 				leftLayout.setVisibility(View.GONE);
 				rightLayout.setVisibility(View.GONE);
 				Intent intent = new Intent();

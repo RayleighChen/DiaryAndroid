@@ -1,5 +1,7 @@
 package com.sebox.diary.view;
 
+
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Camera;
