@@ -25,8 +25,8 @@ public class MyAnimations{
 	}
 
 	public static void initOffset(Context context){
-		xOffset	= (int) (10.667 *context.getResources().getDisplayMetrics().density);
-		yOffset	= -(int) (8.667 *context.getResources().getDisplayMetrics().density);
+		xOffset		= (int) (10.667 *context.getResources().getDisplayMetrics().density);
+		yOffset		= -(int) (8.667 *context.getResources().getDisplayMetrics().density);
 	}
 	
 	public static Animation getRotateAnimation(float fromDegrees ,float toDegrees,int durationMillis){

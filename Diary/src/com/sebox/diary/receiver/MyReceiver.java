@@ -53,17 +53,17 @@ public class MyReceiver extends BroadcastReceiver{
 				MyService.service, 0, notificationIntent, 0);
 		notification.setLatestEventInfo(context, contentTitle, contentText,
 				contentIntent);
-		// æŒ‡å®šé€šçŸ¥å¯ä»¥æ¸…é™¤
+		// Ö¸¶¨Í¨Öª¿ÉÒÔÇå³ı
 		notification.flags |= Notification.FLAG_AUTO_CANCEL;
-		// æŒ‡å®šé€šçŸ¥ä¸èƒ½æ¸…é™¤
+		// Ö¸¶¨Í¨Öª²»ÄÜÇå³ı
 		notification.flags |= Notification.FLAG_NO_CLEAR;
-		// é€šçŸ¥æ˜¾ç¤ºçš„æ—¶å€™æ’­æ”¾é»˜è®¤å£°éŸ³
+		// Í¨ÖªÏÔÊ¾µÄÊ±ºò²¥·ÅÄ¬ÈÏÉùÒô
 		notification.flags |= Notification.FLAG_SHOW_LIGHTS;
-		//è®¾ç½®å£°éŸ³
+		//ÉèÖÃÉùÒô
 		notification.defaults |=Notification.DEFAULT_SOUND;
-		//è®¾ç½®LEDç¯
+		//ÉèÖÃLEDµÆ
 		notification.defaults |= Notification.DEFAULT_LIGHTS;
-		// ç”¨mNotificationManagerçš„notifyæ–¹æ³•é€šçŸ¥ç”¨æˆ·ç”Ÿæˆæ ‡é¢˜æ æ¶ˆæ¯é€šçŸ¥
+		// ÓÃmNotificationManagerµÄnotify·½·¨Í¨ÖªÓÃ»§Éú³É±êÌâÀ¸ÏûÏ¢Í¨Öª
 		manager.notify(1, notification);
 	}
 }

@@ -21,7 +21,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.sebox.diary.activity.WelcomeActivity"
+            android:name=".activity.WelcomeActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -31,88 +31,88 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.sebox.diary.activity.AccessActivity"
+            android:name=".activity.AccessActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.sebox.diary.activity.MainActivity"
+            android:name=".activity.MainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.sebox.diary.activity.AboutActivity"
+            android:name=".activity.AboutActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.sebox.diary.activity.HelpActivity"
+            android:name=".activity.HelpActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.sebox.diary.activity.SetBackgroundActivity"
+            android:name=".activity.SetBackgroundActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.sebox.diary.activity.SetRemindActivity"
+            android:name=".activity.SetRemindActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.sebox.diary.activity.AdviceActivity"
+            android:name=".activity.AdviceActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.sebox.diary.activity.AddDiaryActivity"
+            android:name=".activity.AddDiaryActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.sebox.diary.activity.LookDiaryActivity"
+            android:name=".activity.LookDiaryActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.sebox.diary.activity.SearchDiaryActivity"
+            android:name=".activity.SearchDiaryActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.sebox.diary.activity.SetPasswordActivity"
+            android:name=".activity.SetPasswordActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.sebox.diary.activity.DetailDiaryInfoActivity"
+            android:name=".activity.DetailDiaryInfoActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.sebox.diary.activity.GraphicPassSetActivity"
+            android:name=".activity.GraphicPassSetActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.sebox.diary.activity.ConfirmPassActivity"
+            android:name=".activity.ConfirmPassActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.sebox.diary.activity.CheckPassActivity"
+            android:name=".activity.CheckPassActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" >
         </activity>
-        <service android:name="com.sebox.diary.service.MyService">
+        <service android:name=".service.MyService">
             <intent-filter> 
                 <action android:name="com.sebox.diary.service.MY_SERVICE" /> 
                 <category android:name="android.intent.category.default" /> 
         </intent-filter> 
         </service>
         <receiver 
-            android:name="com.sebox.diary.receiver.MyReceiver">
+            android:name=".receiver.MyReceiver">
             <intent-filter >
                 <action android:name="com.android.system.time"/>
             </intent-filter>

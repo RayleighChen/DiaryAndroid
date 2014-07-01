@@ -2,6 +2,7 @@ package com.sebox.diary.db;
 
 import java.util.List;
 
+import com.sebox.diary.constant.Constant;
 import com.sebox.diary.model.Diary;
 
 import android.content.ContentValues;
@@ -18,7 +19,7 @@ public class DiaryDao {
 		helper = new DataBaseHelper(context);
 	}
 	/**
-	 * 鎻掑叆鏁版嵁
+	 * 插入数据
 	 * @param diary
 	 */
 	public void insert(Diary diary){
@@ -34,7 +35,7 @@ public class DiaryDao {
 	}
 	
 	/**
-	 * 鏍规嵁id鍒犻櫎
+	 * 根据id删除
 	 * 
 	 * @param id
 	 */
@@ -45,7 +46,7 @@ public class DiaryDao {
 		db.close();
 	}
 	/**
-	 * 鏌ヨ
+	 * 查询
 	 * @param diaries
 	 */
 	public void query(List<Diary> diaries) {

@@ -18,8 +18,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 		super(context,DBNAME,null,version);
 	}
 	/**
-	 * è¯¥å‡½æ•°æ˜¯å­å•Šç¬¬ä¸€æ¬¡åˆ›å»ºæ•°æ®åº“çš„æ—¶å€™æ‰§è¡Œï¼Œå®é™…ä¸Šæ˜¯ç¬¬ä¸€æ¬¡
-	 * å¾—åˆ°SQLiteDatabaseå¯¹è±¡çš„æ—¶å€™æ‰ä¼šè¢«è°ƒç”¨
+	 * ¸Ãº¯ÊıÊÇ×Ó°¡µÚÒ»´Î´´½¨Êı¾İ¿âµÄÊ±ºòÖ´ĞĞ£¬Êµ¼ÊÉÏÊÇµÚÒ»´Î
+	 * µÃµ½SQLiteDatabase¶ÔÏóµÄÊ±ºò²Å»á±»µ÷ÓÃ
 	 */
 	@Override
 	public void onCreate(SQLiteDatabase db) {

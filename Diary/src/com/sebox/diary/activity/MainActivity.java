@@ -16,8 +16,10 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.view.Window;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -53,7 +55,6 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		try {
 			init();
-			Log.i("Me","1");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -64,7 +65,6 @@ public class MainActivity extends Activity {
 	private void init() {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.diary_view);
-		Log.i("Me","2");
 		preferences = getSharedPreferences("image", MODE_PRIVATE);
 		addDiary = (MyWin8Button) this.findViewById(R.id.diary_add);
 		lookDiary = (MyWin8Button) this.findViewById(R.id.diary_look);
@@ -98,13 +98,13 @@ public class MainActivity extends Activity {
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-		Log.i("Me","3");
 		setBackground();
 	}
 
 	private void setBackground() {
 		// 得到当前布局
-		RelativeLayout layout = (RelativeLayout) this.findViewById(R.id.diary_view_layout);
+		RelativeLayout layout = (RelativeLayout) this
+				.findViewById(R.id.diary_view_layout);
 		// 得到id,此处id是在设置背景里面产生的，此处暂不解释
 		int id = preferences.getInt("id", 0);
 		if (id == 0) {// id=0说明是初始化时的背景

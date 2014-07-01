@@ -24,13 +24,13 @@ public class AdviceActivity extends Activity implements TextWatcher {
 	private EditText userName = null;
 	private AutoCompleteTextView userEmail = null;
 	private EditText adviceInfo = null;
-	/* private EditText emailPass = null; */
+	/*private EditText emailPass = null;*/
 	private AutoTextViewAdapter adapter = null;
 	private SharedPreferences preferences = null;
 	private Button submit = null;
-	private static final String[] AUTO_EMAILS = {"@163.com", "@sina.com",
-			"@qq.com", "@126.com", "@gmail.com", "@apple.com", "@sohu.com",
-			"@foxmail.com", "@sina.cn", "@yahoo.com.cn"};
+	private static final String[] AUTO_EMAILS = { "@163.com", "@sina.com",
+			"@qq.com", "@126.com", "@gmail.com", "@apple.com","@sohu.com",
+			"@foxmail.com","@sina.cn","@yahoo.com.cn"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,11 +46,11 @@ public class AdviceActivity extends Activity implements TextWatcher {
 		back = (ImageView) this.findViewById(R.id.back_advice);
 		userName = (EditText) this.findViewById(R.id.user_name);
 		userEmail = (AutoCompleteTextView) this.findViewById(R.id.user_email);
-		/* emailPass = (EditText)this.findViewById(R.id.user_email_pass); */
+		/*emailPass = (EditText)this.findViewById(R.id.user_email_pass);*/
 		adapter = new AutoTextViewAdapter(this);
 		userEmail.setAdapter(adapter);
-		userEmail.setThreshold(1);// è¾“å…¥1ä¸ªå­—ç¬¦æ—¶å°±å¼€å§‹æ£€æµ‹ï¼Œé»˜è®¤ä¸º2ä¸ª
-		userEmail.addTextChangedListener(this);// ç›‘å¬autoviewçš„å˜åŒ–
+		userEmail.setThreshold(1);// ÊäÈë1¸ö×Ö·ûÊ±¾Í¿ªÊ¼¼ì²â£¬Ä¬ÈÏÎª2¸ö
+		userEmail.addTextChangedListener(this);// ¼àÌýautoviewµÄ±ä»¯
 		adviceInfo = (EditText) this.findViewById(R.id.advice_info);
 		submit = (Button) this.findViewById(R.id.submit);
 		submit.setOnClickListener(new SubmitListener());
@@ -75,23 +75,23 @@ public class AdviceActivity extends Activity implements TextWatcher {
 	}
 
 	private void setBackground() {
-		// å¾—åˆ°å½“å‰å¸ƒå±€
+		// µÃµ½µ±Ç°²¼¾Ö
 		LinearLayout layout = (LinearLayout) this
 				.findViewById(R.id.advice_layout);
-		// å¾—åˆ°id,æ­¤å¤„idæ˜¯åœ¨è®¾ç½®èƒŒæ™¯é‡Œé¢äº§ç”Ÿçš„ï¼Œæ­¤å¤„æš‚ä¸è§£é‡Š
+		// µÃµ½id,´Ë´¦idÊÇÔÚÉèÖÃ±³¾°ÀïÃæ²úÉúµÄ£¬´Ë´¦ÔÝ²»½âÊÍ
 		int id = preferences.getInt("id", 0);
-		if (id == 0) {// id=0è¯´æ˜Žæ˜¯åˆå§‹åŒ–æ—¶çš„èƒŒæ™¯
-			// è®¾ç½®èƒŒæ™¯æ–¹æ³•
+		if (id == 0) {// id=0ËµÃ÷ÊÇ³õÊ¼»¯Ê±µÄ±³¾°
+			// ÉèÖÃ±³¾°·½·¨
 			layout.setBackgroundResource(R.drawable.diary_view_bg);
-		} else if (id == 1) {// id=1è¯´æ˜Žç”¨æˆ·é€‰æ‹©äº†ç¬¬ä¸€å¹…å›¾ç‰‡
+		} else if (id == 1) {// id=1ËµÃ÷ÓÃ»§Ñ¡ÔñÁËµÚÒ»·ùÍ¼Æ¬
 			layout.setBackgroundResource(R.drawable.diary_view_bg);
-		} else if (id == 2) {// id=2è¯´æ˜Žç”¨æˆ·é€‰æ‹©äº†ç¬¬äºŒå¹…å›¾ç‰‡
+		} else if (id == 2) {// id=2ËµÃ÷ÓÃ»§Ñ¡ÔñÁËµÚ¶þ·ùÍ¼Æ¬
 			layout.setBackgroundResource(R.drawable.spring);
-		} else if (id == 3) {// id=3è¯´æ˜Žç”¨æˆ·é€‰æ‹©äº†ç¬¬ä¸‰å¹…å›¾ç‰‡
+		} else if (id == 3) {// id=3ËµÃ÷ÓÃ»§Ñ¡ÔñÁËµÚÈý·ùÍ¼Æ¬
 			layout.setBackgroundResource(R.drawable.summer);
-		} else if (id == 4) {// id=4è¯´æ˜Žç”¨æˆ·é€‰æ‹©äº†ç¬¬å››å¹…å›¾ç‰‡
+		} else if (id == 4) {// id=4ËµÃ÷ÓÃ»§Ñ¡ÔñÁËµÚËÄ·ùÍ¼Æ¬
 			layout.setBackgroundResource(R.drawable.autumn);
-		} else if (id == 5) {// id=4è¯´æ˜Žç”¨æˆ·é€‰æ‹©äº†ç¬¬å››å¹…å›¾ç‰‡
+		} else if (id == 5) {// id=4ËµÃ÷ÓÃ»§Ñ¡ÔñÁËµÚËÄ·ùÍ¼Æ¬
 			layout.setBackgroundResource(R.drawable.winter);
 		}
 	}
@@ -103,22 +103,18 @@ public class AdviceActivity extends Activity implements TextWatcher {
 			if (!userEmail.getText().toString().trim().equals("")
 					&& !userName.getText().toString().trim().equals("")
 					&& !adviceInfo.getText().toString().trim().equals("")) {
-				String myReciver = "seeker199291@gmail.com"; // æ”¶ä»¶äºº
-				String mySubject = getString(R.string.theme); // ä¸»é¢˜
-				String myBody = adviceInfo.getText().toString().trim()
-						+ "\næ¥è‡ªäºŽï¼š" + userEmail.getText().toString().trim()
-						+ "  " + userName.getText().toString().trim();
-				Intent myIntent = new Intent(android.content.Intent.ACTION_SEND);
-				myIntent.setType("plain/text");// è®¾ç½®é‚®ä»¶æ ¼å¼
-				myIntent.putExtra(android.content.Intent.EXTRA_EMAIL, myReciver);
-				myIntent.putExtra(android.content.Intent.EXTRA_SUBJECT,
-						mySubject);
-				myIntent.putExtra(android.content.Intent.EXTRA_TEXT, myBody);
-				startActivity(Intent.createChooser(myIntent,
-						getString(R.string.email_choose)));
-			} else {
-				Toast.makeText(AdviceActivity.this,
-						getString(R.string.detail_info), 0).show();
+				String myReciver = "seeker199291@gmail.com"; //ÊÕ¼þÈË   
+			    String mySubject = getString(R.string.theme); //Ö÷Ìâ   
+			    String myBody = adviceInfo.getText().toString().trim()
+			    		+"\nÀ´×ÔÓÚ£º"+userEmail.getText().toString().trim()+"  "+userName.getText().toString().trim();   
+			    Intent myIntent=new Intent(android.content.Intent.ACTION_SEND);  
+	            myIntent.setType("plain/text");//ÉèÖÃÓÊ¼þ¸ñÊ½   
+	            myIntent.putExtra(android.content.Intent.EXTRA_EMAIL, myReciver);  
+	            myIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, mySubject);   
+	            myIntent.putExtra(android.content.Intent.EXTRA_TEXT, myBody);  
+	            startActivity(Intent.createChooser(myIntent, getString(R.string.email_choose)));
+			}else {
+				Toast.makeText(AdviceActivity.this, getString(R.string.detail_info), 0).show();
 			}
 		}
 	}
@@ -141,7 +137,7 @@ public class AdviceActivity extends Activity implements TextWatcher {
 	}
 
 	/**
-	 * è‡ªåŠ¨å¡«å……é‚®ç®±åˆ—è¡¨
+	 * ×Ô¶¯Ìî³äÓÊÏäÁÐ±í
 	 * 
 	 * @param input
 	 */
@@ -149,12 +145,12 @@ public class AdviceActivity extends Activity implements TextWatcher {
 		String autoEmail = "";
 		if (input.length() > 0) {
 			for (int i = 0; i < AUTO_EMAILS.length; ++i) {
-				if (input.contains("@")) {// åŒ…å«â€œ@â€åˆ™å¼€å§‹è¿‡æ»¤
+				if (input.contains("@")) {// °üº¬¡°@¡±Ôò¿ªÊ¼¹ýÂË
 					String filter = input.substring(input.indexOf("@") + 1,
-							input.length());// èŽ·å–è¿‡æ»¤å™¨ï¼Œå³æ ¹æ®è¾“å…¥â€œ@â€ä¹‹åŽçš„å†…å®¹è¿‡æ»¤å‡ºç¬¦åˆæ¡ä»¶çš„é‚®ç®±
-					if (AUTO_EMAILS[i].contains(filter)) {// ç¬¦åˆè¿‡æ»¤æ¡ä»¶
+							input.length());// »ñÈ¡¹ýÂËÆ÷£¬¼´¸ù¾ÝÊäÈë¡°@¡±Ö®ºóµÄÄÚÈÝ¹ýÂË³ö·ûºÏÌõ¼þµÄÓÊÏä
+					if (AUTO_EMAILS[i].contains(filter)) {// ·ûºÏ¹ýÂËÌõ¼þ
 						autoEmail = input.substring(0, input.indexOf("@"))
-								+ AUTO_EMAILS[i];// ç”¨æˆ·è¾“å…¥â€œ@â€ä¹‹å‰çš„å†…å®¹åŠ ä¸Šè‡ªåŠ¨å¡«å……çš„å†…å®¹å³ä¸ºæœ€åŽçš„ç»“æžœ
+								+ AUTO_EMAILS[i];// ÓÃ»§ÊäÈë¡°@¡±Ö®Ç°µÄÄÚÈÝ¼ÓÉÏ×Ô¶¯Ìî³äµÄÄÚÈÝ¼´Îª×îºóµÄ½á¹û
 						adapter.mList.add(autoEmail);
 					}
 				} else {
@@ -175,6 +171,6 @@ public class AdviceActivity extends Activity implements TextWatcher {
 	@Override
 	public void onTextChanged(CharSequence s, int start, int before, int count) {
 		// TODO Auto-generated method stub
-
+		
 	}
 }

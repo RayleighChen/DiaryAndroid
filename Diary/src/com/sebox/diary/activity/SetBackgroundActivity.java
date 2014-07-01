@@ -32,27 +32,27 @@ public class SetBackgroundActivity extends Activity implements OnGestureListener
 		init();
 	}
 	private void init() {
-		//è®¾ç½®çª—å£æ— æ ‡é¢˜
+		//ÉèÖÃ´°¿ÚÎŞ±êÌâ
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		//å¾—åˆ°å¸ƒå±€
+		//µÃµ½²¼¾Ö
 		setContentView(R.layout.background);
-		//å®ä¾‹åŒ–æ‰‹åŠ¿å¯¹è±¡ï¼Œç”¨ä»¥å®ç°æ‰‹åŠ¿æ»‘åŠ¨
+		//ÊµÀı»¯ÊÖÊÆ¶ÔÏó£¬ÓÃÒÔÊµÏÖÊÖÊÆ»¬¶¯
 		detector = new GestureDetector(this);
-		//é€šè¿‡findViewByIdæ–¹æ³•å¾—åˆ°Flipperæ§ä»¶
+		//Í¨¹ıfindViewById·½·¨µÃµ½Flipper¿Ø¼ş
 		flipper = (ViewFlipper) this.findViewById(R.id.flipper);
-		//åœ¨flipperä¸­æ·»åŠ å››å¹…å›¾ç‰‡
+		//ÔÚflipperÖĞÌí¼ÓËÄ·ùÍ¼Æ¬
 		flipper.addView(getImageView(R.drawable.diary_view_bg));
 		flipper.addView(getImageView(R.drawable.spring));
 		flipper.addView(getImageView(R.drawable.summer));
 		flipper.addView(getImageView(R.drawable.autumn));
 		flipper.addView(getImageView(R.drawable.winter));
-		//å¾—åˆ°è®¾ç½®æŒ‰é’®
+		//µÃµ½ÉèÖÃ°´Å¥
 		setBackground = (Button) this.findViewById(R.id.backround_set);
-		//å¾—åˆ°å–æ¶ˆæŒ‰é’®
+		//µÃµ½È¡Ïû°´Å¥
 		cancel = (Button) this.findViewById(R.id.backround_cancel);
-		//è®¾ç½®æŒ‰é’®ç›‘å¬å™¨
+		//ÉèÖÃ°´Å¥¼àÌıÆ÷
 		setBackground.setOnClickListener(new SetBackgroundListener());
-		//å–æ¶ˆæŒ‰é’®ç›‘å¬å™¨
+		//È¡Ïû°´Å¥¼àÌıÆ÷
 		cancel.setOnClickListener(new CancelListener());
 	}
 	private View getImageView(int id) {
@@ -71,29 +71,29 @@ public class SetBackgroundActivity extends Activity implements OnGestureListener
 
 	public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
 			float velocityY) {
-		if (e1.getX() - e2.getX() > 120) {// å‘å³æ»‘åŠ¨
+		if (e1.getX() - e2.getX() > 120) {// ÏòÓÒ»¬¶¯
 			if (flipper.getDisplayedChild() == 4) {
-				//è®¾ç½®å¾€å³ä¸èƒ½å¾ªç¯æ»‘åŠ¨
+				//ÉèÖÃÍùÓÒ²»ÄÜÑ­»·»¬¶¯
 				flipper.stopFlipping();
 				return false;
 			} else {
-				//è®¾ç½®è¿›å…¥åŠ¨ç”»
+				//ÉèÖÃ½øÈë¶¯»­
 				flipper.setInAnimation(AnimationUtils.loadAnimation(this,
 						R.anim.push_left_in));
-				//è®¾ç½®ç¦»å»åŠ¨ç”»
+				//ÉèÖÃÀëÈ¥¶¯»­
 				flipper.setOutAnimation(AnimationUtils.loadAnimation(this,
 						R.anim.push_left_out));
-				//æ˜¾ç¤ºä¸‹ä¸€å‰¯å›¾ç‰‡
+				//ÏÔÊ¾ÏÂÒ»¸±Í¼Æ¬
 				flipper.showNext();
 			}
-			//è®¾ç½®æŒ‰é’®ä¸å¯è§
+			//ÉèÖÃ°´Å¥²»¿É¼û
 			findViewById(R.id.bg_button).setVisibility(View.GONE);
-			//flag++ ç¬¬ä¸€å¼ é»˜è®¤ä¸º1 æ­¤åå¾€å³æ»‘åŠ¨ä¸€æ¬¡åŠ +1
+			//flag++ µÚÒ»ÕÅÄ¬ÈÏÎª1 ´ËºóÍùÓÒ»¬¶¯Ò»´Î¼Ó+1
 			flag++;
 
-		} else if (e2.getX() - e1.getX() > 120) {// å‘å·¦æ»‘åŠ¨
+		} else if (e2.getX() - e1.getX() > 120) {// Ïò×ó»¬¶¯
 			if (flipper.getDisplayedChild() == 0) {
-				//è®¾ç½®å¾€å·¦ä¸èƒ½å¾ªç¯æ»‘åŠ¨
+				//ÉèÖÃÍù×ó²»ÄÜÑ­»·»¬¶¯
 				flipper.stopFlipping();
 				return false;
 			} else {
@@ -101,19 +101,19 @@ public class SetBackgroundActivity extends Activity implements OnGestureListener
 						R.anim.push_right_in));
 				flipper.setOutAnimation(AnimationUtils.loadAnimation(this,
 						R.anim.push_right_out));
-				//æ˜¾ç¤ºä¸Šä¸€å‰¯å›¾ç‰‡
+				//ÏÔÊ¾ÉÏÒ»¸±Í¼Æ¬
 				flipper.showPrevious();
 			}
-			//è®¾ç½®æŒ‰é’®ä¸å¯è§
+			//ÉèÖÃ°´Å¥²»¿É¼û
 			findViewById(R.id.bg_button).setVisibility(View.GONE);
-			//flag-- ç¬¬ä¸€å¼ é»˜è®¤ä¸º1 æ­¤åå¾€å³æ»‘åŠ¨ä¸€æ¬¡åŠ -1
+			//flag-- µÚÒ»ÕÅÄ¬ÈÏÎª1 ´ËºóÍùÓÒ»¬¶¯Ò»´Î¼Ó-1
 			flag--;
 		}
 		return false;
 	}
-	//é•¿æŒ‰å›¾ç‰‡
+	//³¤°´Í¼Æ¬
 		public void onLongPress(MotionEvent e) {
-			//å°†ä¸¤ä¸ªæŒ‰é’®è®¾ç½®å¯è§
+			//½«Á½¸ö°´Å¥ÉèÖÃ¿É¼û
 			findViewById(R.id.bg_button).setVisibility(View.VISIBLE);
 		}
 
@@ -134,7 +134,7 @@ public class SetBackgroundActivity extends Activity implements OnGestureListener
 
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				//éšè—ä¸¤ä¸ªæŒ‰é’®
+				//Òş²ØÁ½¸ö°´Å¥
 				findViewById(R.id.bg_button).setVisibility(View.GONE);
 			}
 
@@ -144,18 +144,18 @@ public class SetBackgroundActivity extends Activity implements OnGestureListener
 
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				//å¾—åˆ°ä¸€ä¸ªSharedPreferenceså¯¹è±¡ï¼Œç”¨ä»¥ä¿å­˜å½“å‰å›¾ç‰‡çš„id
+				//µÃµ½Ò»¸öSharedPreferences¶ÔÏó£¬ÓÃÒÔ±£´æµ±Ç°Í¼Æ¬µÄid
 				SharedPreferences preferences = getSharedPreferences("image",
 						MODE_PRIVATE);
 				Editor editor = preferences.edit();
 				editor.putInt("id", flag);
-				editor.commit();//æäº¤ï¼Œå¦åˆ™ä¸èƒ½ä¿å­˜æˆåŠŸ
-				//ç‚¹å‡»è®¾ç½®æŒ‰é’®åè·³è½¬Activityçš„å®ç°
+				editor.commit();//Ìá½»£¬·ñÔò²»ÄÜ±£´æ³É¹¦
+				//µã»÷ÉèÖÃ°´Å¥ºóÌø×ªActivityµÄÊµÏÖ
 				Intent intent = new Intent();
 				intent.setClass(SetBackgroundActivity.this,
 						MainActivity.class);
 				startActivity(intent);
-				//ç»“æŸå½“å‰Activity
+				//½áÊøµ±Ç°Activity
 				SetBackgroundActivity.this.finish();
 				overridePendingTransition(R.anim.push_below_in,R.anim.push_below_out);
 			}

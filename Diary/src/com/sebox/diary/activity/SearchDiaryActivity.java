@@ -75,22 +75,22 @@ public class SearchDiaryActivity extends Activity {
 		setBackground();
 	}
 	private void setBackground() {
-		// å¾—åˆ°å½“å‰å¸ƒå±€
+		// µÃµ½µ±Ç°²¼¾Ö
 		LinearLayout layout = (LinearLayout) this.findViewById(R.id.search_diary_layout);
-		// å¾—åˆ°id,æ­¤å¤„idæ˜¯åœ¨è®¾ç½®èƒŒæ™¯é‡Œé¢äº§ç”Ÿçš„ï¼Œæ­¤å¤„æš‚ä¸è§£é‡Š
+		// µÃµ½id,´Ë´¦idÊÇÔÚÉèÖÃ±³¾°ÀïÃæ²úÉúµÄ£¬´Ë´¦Ôİ²»½âÊÍ
 		int id = preferences.getInt("id", 0);
-		if (id == 0) {// id=0è¯´æ˜æ˜¯åˆå§‹åŒ–æ—¶çš„èƒŒæ™¯
-			// è®¾ç½®èƒŒæ™¯æ–¹æ³•
+		if (id == 0) {// id=0ËµÃ÷ÊÇ³õÊ¼»¯Ê±µÄ±³¾°
+			// ÉèÖÃ±³¾°·½·¨
 			layout.setBackgroundResource(R.drawable.diary_view_bg);
-		} else if (id == 1) {// id=1è¯´æ˜ç”¨æˆ·é€‰æ‹©äº†ç¬¬ä¸€å¹…å›¾ç‰‡
+		} else if (id == 1) {// id=1ËµÃ÷ÓÃ»§Ñ¡ÔñÁËµÚÒ»·ùÍ¼Æ¬
 			layout.setBackgroundResource(R.drawable.diary_view_bg);
-		} else if (id == 2) {// id=2è¯´æ˜ç”¨æˆ·é€‰æ‹©äº†ç¬¬äºŒå¹…å›¾ç‰‡
+		} else if (id == 2) {// id=2ËµÃ÷ÓÃ»§Ñ¡ÔñÁËµÚ¶ş·ùÍ¼Æ¬
 			layout.setBackgroundResource(R.drawable.spring);
-		} else if (id == 3) {// id=3è¯´æ˜ç”¨æˆ·é€‰æ‹©äº†ç¬¬ä¸‰å¹…å›¾ç‰‡
+		} else if (id == 3) {// id=3ËµÃ÷ÓÃ»§Ñ¡ÔñÁËµÚÈı·ùÍ¼Æ¬
 			layout.setBackgroundResource(R.drawable.summer);
-		} else if (id == 4) {// id=4è¯´æ˜ç”¨æˆ·é€‰æ‹©äº†ç¬¬å››å¹…å›¾ç‰‡
+		} else if (id == 4) {// id=4ËµÃ÷ÓÃ»§Ñ¡ÔñÁËµÚËÄ·ùÍ¼Æ¬
 			layout.setBackgroundResource(R.drawable.autumn);
-		} else if (id == 5) {// id=4è¯´æ˜ç”¨æˆ·é€‰æ‹©äº†ç¬¬å››å¹…å›¾ç‰‡
+		} else if (id == 5) {// id=4ËµÃ÷ÓÃ»§Ñ¡ÔñÁËµÚËÄ·ùÍ¼Æ¬
 			layout.setBackgroundResource(R.drawable.winter);
 		}
 	}
@@ -124,9 +124,9 @@ public class SearchDiaryActivity extends Activity {
 				refresh();
 			}else {
 				diaries.clear();
-				// éšè—è¾“å…¥æ³• 
+				// Òş²ØÊäÈë·¨ 
 				InputMethodManager manager = (InputMethodManager) getApplicationContext().getSystemService(Context.INPUT_METHOD_SERVICE); 
-				// æ˜¾ç¤ºæˆ–è€…éšè—è¾“å…¥æ³• 
+				// ÏÔÊ¾»òÕßÒş²ØÊäÈë·¨ 
 				manager.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
 			}
 		}
@@ -271,7 +271,7 @@ builder.setItems(new String[]{getString(R.string.share),getString(R.string.trans
 								// TODO Auto-generated method stub
 								diaryDao.deleteAll();
 								refresh();
-								Toast.makeText(SearchDiaryActivity.this, "ä¿¡æ¯å·²æ¸…ç©º", Toast.LENGTH_SHORT).show();
+								Toast.makeText(SearchDiaryActivity.this, "ĞÅÏ¢ÒÑÇå¿Õ", Toast.LENGTH_SHORT).show();
 								Intent intent = new Intent();
 								intent.setAction("com.android.info.delete");
 								SearchDiaryActivity.this.sendBroadcast(intent);
