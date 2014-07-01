@@ -19,7 +19,7 @@ public class DiaryDao {
 		helper = new DataBaseHelper(context);
 	}
 	/**
-	 * ²åÈëÊý¾Ý
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @param diary
 	 */
 	public void insert(Diary diary){
@@ -35,7 +35,7 @@ public class DiaryDao {
 	}
 	
 	/**
-	 * ¸ù¾ÝidÉ¾³ý
+	 * ï¿½ï¿½ï¿½idÉ¾ï¿½ï¿½
 	 * 
 	 * @param id
 	 */
@@ -46,7 +46,7 @@ public class DiaryDao {
 		db.close();
 	}
 	/**
-	 * ²éÑ¯
+	 * ï¿½ï¿½Ñ¯
 	 * @param diaries
 	 */
 	public void query(List<Diary> diaries) {

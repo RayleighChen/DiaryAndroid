@@ -7,7 +7,7 @@
     android:gravity="center"
     android:orientation="vertical" >
     
-    <com.org.android.diary.view.LockPatternView
+    <com.sebox.diary.view.LockPatternView
         xmlns:app="http://schemas.android.com/apk/res/com.org.android.diary"
         android:id="@+id/lock_check"
         android:background="@null"

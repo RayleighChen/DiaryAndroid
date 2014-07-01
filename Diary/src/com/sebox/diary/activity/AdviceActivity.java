@@ -49,8 +49,8 @@ public class AdviceActivity extends Activity implements TextWatcher {
 		/*emailPass = (EditText)this.findViewById(R.id.user_email_pass);*/
 		adapter = new AutoTextViewAdapter(this);
 		userEmail.setAdapter(adapter);
-		userEmail.setThreshold(1);// ÊäÈë1¸ö×Ö·ûÊ±¾Í¿ªÊ¼¼ì²â£¬Ä¬ÈÏÎª2¸ö
-		userEmail.addTextChangedListener(this);// ¼àÌýautoviewµÄ±ä»¯
+		userEmail.setThreshold(1);// ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½Ö·ï¿½Ê±ï¿½Í¿ï¿½Ê¼ï¿½ï¿½â£¬Ä¬ï¿½ï¿½Îª2ï¿½ï¿½
+		userEmail.addTextChangedListener(this);// ï¿½ï¿½ï¿½ï¿½autoviewï¿½Ä±ä»¯
 		adviceInfo = (EditText) this.findViewById(R.id.advice_info);
 		submit = (Button) this.findViewById(R.id.submit);
 		submit.setOnClickListener(new SubmitListener());
@@ -75,23 +75,23 @@ public class AdviceActivity extends Activity implements TextWatcher {
 	}
 
 	private void setBackground() {
-		// µÃµ½µ±Ç°²¼¾Ö
+		// ï¿½Ãµï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½
 		LinearLayout layout = (LinearLayout) this
 				.findViewById(R.id.advice_layout);
-		// µÃµ½id,´Ë´¦idÊÇÔÚÉèÖÃ±³¾°ÀïÃæ²úÉúµÄ£¬´Ë´¦ÔÝ²»½âÊÍ
+		// ï¿½Ãµï¿½id,ï¿½Ë´ï¿½idï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½Ë´ï¿½ï¿½Ý²ï¿½ï¿½ï¿½ï¿½ï¿½
 		int id = preferences.getInt("id", 0);
-		if (id == 0) {// id=0ËµÃ÷ÊÇ³õÊ¼»¯Ê±µÄ±³¾°
-			// ÉèÖÃ±³¾°·½·¨
+		if (id == 0) {// id=0Ëµï¿½ï¿½ï¿½Ç³ï¿½Ê¼ï¿½ï¿½Ê±ï¿½Ä±ï¿½ï¿½ï¿½
+			// ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			layout.setBackgroundResource(R.drawable.diary_view_bg);
-		} else if (id == 1) {// id=1ËµÃ÷ÓÃ»§Ñ¡ÔñÁËµÚÒ»·ùÍ¼Æ¬
+		} else if (id == 1) {// id=1Ëµï¿½ï¿½ï¿½Ã»ï¿½Ñ¡ï¿½ï¿½ï¿½Ëµï¿½Ò»ï¿½ï¿½Í¼Æ¬
 			layout.setBackgroundResource(R.drawable.diary_view_bg);
-		} else if (id == 2) {// id=2ËµÃ÷ÓÃ»§Ñ¡ÔñÁËµÚ¶þ·ùÍ¼Æ¬
+		} else if (id == 2) {// id=2Ëµï¿½ï¿½ï¿½Ã»ï¿½Ñ¡ï¿½ï¿½ï¿½ËµÚ¶ï¿½ï¿½ï¿½Í¼Æ¬
 			layout.setBackgroundResource(R.drawable.spring);
-		} else if (id == 3) {// id=3ËµÃ÷ÓÃ»§Ñ¡ÔñÁËµÚÈý·ùÍ¼Æ¬
+		} else if (id == 3) {// id=3Ëµï¿½ï¿½ï¿½Ã»ï¿½Ñ¡ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Í¼Æ¬
 			layout.setBackgroundResource(R.drawable.summer);
-		} else if (id == 4) {// id=4ËµÃ÷ÓÃ»§Ñ¡ÔñÁËµÚËÄ·ùÍ¼Æ¬
+		} else if (id == 4) {// id=4Ëµï¿½ï¿½ï¿½Ã»ï¿½Ñ¡ï¿½ï¿½ï¿½Ëµï¿½ï¿½Ä·ï¿½Í¼Æ¬
 			layout.setBackgroundResource(R.drawable.autumn);
-		} else if (id == 5) {// id=4ËµÃ÷ÓÃ»§Ñ¡ÔñÁËµÚËÄ·ùÍ¼Æ¬
+		} else if (id == 5) {// id=4Ëµï¿½ï¿½ï¿½Ã»ï¿½Ñ¡ï¿½ï¿½ï¿½Ëµï¿½ï¿½Ä·ï¿½Í¼Æ¬
 			layout.setBackgroundResource(R.drawable.winter);
 		}
 	}
@@ -103,12 +103,12 @@ public class AdviceActivity extends Activity implements TextWatcher {
 			if (!userEmail.getText().toString().trim().equals("")
 					&& !userName.getText().toString().trim().equals("")
 					&& !adviceInfo.getText().toString().trim().equals("")) {
-				String myReciver = "seeker199291@gmail.com"; //ÊÕ¼þÈË   
-			    String mySubject = getString(R.string.theme); //Ö÷Ìâ   
+				String myReciver = "seeker199291@gmail.com"; //ï¿½Õ¼ï¿½ï¿½ï¿½   
+			    String mySubject = getString(R.string.theme); //ï¿½ï¿½ï¿½ï¿½   
 			    String myBody = adviceInfo.getText().toString().trim()
-			    		+"\nÀ´×ÔÓÚ£º"+userEmail.getText().toString().trim()+"  "+userName.getText().toString().trim();   
+			    		+"\nï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½"+userEmail.getText().toString().trim()+"  "+userName.getText().toString().trim();   
 			    Intent myIntent=new Intent(android.content.Intent.ACTION_SEND);  
-	            myIntent.setType("plain/text");//ÉèÖÃÓÊ¼þ¸ñÊ½   
+	            myIntent.setType("plain/text");//ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½Ê½   
 	            myIntent.putExtra(android.content.Intent.EXTRA_EMAIL, myReciver);  
 	            myIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, mySubject);   
 	            myIntent.putExtra(android.content.Intent.EXTRA_TEXT, myBody);  
@@ -137,7 +137,7 @@ public class AdviceActivity extends Activity implements TextWatcher {
 	}
 
 	/**
-	 * ×Ô¶¯Ìî³äÓÊÏäÁÐ±í
+	 * ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½
 	 * 
 	 * @param input
 	 */
@@ -145,12 +145,12 @@ public class AdviceActivity extends Activity implements TextWatcher {
 		String autoEmail = "";
 		if (input.length() > 0) {
 			for (int i = 0; i < AUTO_EMAILS.length; ++i) {
-				if (input.contains("@")) {// °üº¬¡°@¡±Ôò¿ªÊ¼¹ýÂË
+				if (input.contains("@")) {// ï¿½ï¿½@ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½
 					String filter = input.substring(input.indexOf("@") + 1,
-							input.length());// »ñÈ¡¹ýÂËÆ÷£¬¼´¸ù¾ÝÊäÈë¡°@¡±Ö®ºóµÄÄÚÈÝ¹ýÂË³ö·ûºÏÌõ¼þµÄÓÊÏä
-					if (AUTO_EMAILS[i].contains(filter)) {// ·ûºÏ¹ýÂËÌõ¼þ
+							input.length());// ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë¡°@ï¿½ï¿½Ö®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¹ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+					if (AUTO_EMAILS[i].contains(filter)) {// ï¿½ï¿½Ï¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 						autoEmail = input.substring(0, input.indexOf("@"))
-								+ AUTO_EMAILS[i];// ÓÃ»§ÊäÈë¡°@¡±Ö®Ç°µÄÄÚÈÝ¼ÓÉÏ×Ô¶¯Ìî³äµÄÄÚÈÝ¼´Îª×îºóµÄ½á¹û
+								+ AUTO_EMAILS[i];// ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ë¡°@ï¿½ï¿½Ö®Ç°ï¿½ï¿½ï¿½ï¿½ï¿½Ý¼ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¼ï¿½Îªï¿½ï¿½ï¿½Ä½ï¿½ï¿½
 						adapter.mList.add(autoEmail);
 					}
 				} else {

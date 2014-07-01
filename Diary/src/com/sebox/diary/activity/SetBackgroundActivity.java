@@ -32,27 +32,27 @@ public class SetBackgroundActivity extends Activity implements OnGestureListener
 		init();
 	}
 	private void init() {
-		//ÉèÖÃ´°¿ÚÎÞ±êÌâ
+		//ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½Þ±ï¿½ï¿½ï¿½
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		//µÃµ½²¼¾Ö
+		//ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½
 		setContentView(R.layout.background);
-		//ÊµÀý»¯ÊÖÊÆ¶ÔÏó£¬ÓÃÒÔÊµÏÖÊÖÊÆ»¬¶¯
+		//Êµï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½Æ»ï¿½ï¿½ï¿½
 		detector = new GestureDetector(this);
-		//Í¨¹ýfindViewById·½·¨µÃµ½Flipper¿Ø¼þ
+		//Í¨ï¿½ï¿½findViewByIdï¿½ï¿½ï¿½ï¿½ï¿½Ãµï¿½Flipperï¿½Ø¼ï¿½
 		flipper = (ViewFlipper) this.findViewById(R.id.flipper);
-		//ÔÚflipperÖÐÌí¼ÓËÄ·ùÍ¼Æ¬
+		//ï¿½ï¿½flipperï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½Í¼Æ¬
 		flipper.addView(getImageView(R.drawable.diary_view_bg));
 		flipper.addView(getImageView(R.drawable.spring));
 		flipper.addView(getImageView(R.drawable.summer));
 		flipper.addView(getImageView(R.drawable.autumn));
 		flipper.addView(getImageView(R.drawable.winter));
-		//µÃµ½ÉèÖÃ°´Å¥
+		//ï¿½Ãµï¿½ï¿½ï¿½ï¿½Ã°ï¿½Å¥
 		setBackground = (Button) this.findViewById(R.id.backround_set);
-		//µÃµ½È¡Ïû°´Å¥
+		//ï¿½Ãµï¿½È¡ï¿½ï¿½Å¥
 		cancel = (Button) this.findViewById(R.id.backround_cancel);
-		//ÉèÖÃ°´Å¥¼àÌýÆ÷
+		//ï¿½ï¿½ï¿½Ã°ï¿½Å¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		setBackground.setOnClickListener(new SetBackgroundListener());
-		//È¡Ïû°´Å¥¼àÌýÆ÷
+		//È¡ï¿½ï¿½Å¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		cancel.setOnClickListener(new CancelListener());
 	}
 	private View getImageView(int id) {
@@ -71,29 +71,29 @@ public class SetBackgroundActivity extends Activity implements OnGestureListener
 
 	public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
 			float velocityY) {
-		if (e1.getX() - e2.getX() > 120) {// ÏòÓÒ»¬¶¯
+		if (e1.getX() - e2.getX() > 120) {// ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½
 			if (flipper.getDisplayedChild() == 4) {
-				//ÉèÖÃÍùÓÒ²»ÄÜÑ­»·»¬¶¯
+				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				flipper.stopFlipping();
 				return false;
 			} else {
-				//ÉèÖÃ½øÈë¶¯»­
+				//ï¿½ï¿½ï¿½Ã½ï¿½ï¿½ë¶¯ï¿½ï¿½
 				flipper.setInAnimation(AnimationUtils.loadAnimation(this,
 						R.anim.push_left_in));
-				//ÉèÖÃÀëÈ¥¶¯»­
+				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½
 				flipper.setOutAnimation(AnimationUtils.loadAnimation(this,
 						R.anim.push_left_out));
-				//ÏÔÊ¾ÏÂÒ»¸±Í¼Æ¬
+				//ï¿½ï¿½Ê¾ï¿½ï¿½Ò»ï¿½ï¿½Í¼Æ¬
 				flipper.showNext();
 			}
-			//ÉèÖÃ°´Å¥²»¿É¼û
+			//ï¿½ï¿½ï¿½Ã°ï¿½Å¥ï¿½ï¿½ï¿½É¼ï¿½
 			findViewById(R.id.bg_button).setVisibility(View.GONE);
-			//flag++ µÚÒ»ÕÅÄ¬ÈÏÎª1 ´ËºóÍùÓÒ»¬¶¯Ò»´Î¼Ó+1
+			//flag++ ï¿½ï¿½Ò»ï¿½ï¿½Ä¬ï¿½ï¿½Îª1 ï¿½Ëºï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ò»ï¿½Î¼ï¿½+1
 			flag++;
 
-		} else if (e2.getX() - e1.getX() > 120) {// Ïò×ó»¬¶¯
+		} else if (e2.getX() - e1.getX() > 120) {// ï¿½ï¿½ï¿½ó»¬¶ï¿½
 			if (flipper.getDisplayedChild() == 0) {
-				//ÉèÖÃÍù×ó²»ÄÜÑ­»·»¬¶¯
+				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				flipper.stopFlipping();
 				return false;
 			} else {
@@ -101,19 +101,19 @@ public class SetBackgroundActivity extends Activity implements OnGestureListener
 						R.anim.push_right_in));
 				flipper.setOutAnimation(AnimationUtils.loadAnimation(this,
 						R.anim.push_right_out));
-				//ÏÔÊ¾ÉÏÒ»¸±Í¼Æ¬
+				//ï¿½ï¿½Ê¾ï¿½ï¿½Ò»ï¿½ï¿½Í¼Æ¬
 				flipper.showPrevious();
 			}
-			//ÉèÖÃ°´Å¥²»¿É¼û
+			//ï¿½ï¿½ï¿½Ã°ï¿½Å¥ï¿½ï¿½ï¿½É¼ï¿½
 			findViewById(R.id.bg_button).setVisibility(View.GONE);
-			//flag-- µÚÒ»ÕÅÄ¬ÈÏÎª1 ´ËºóÍùÓÒ»¬¶¯Ò»´Î¼Ó-1
+			//flag-- ï¿½ï¿½Ò»ï¿½ï¿½Ä¬ï¿½ï¿½Îª1 ï¿½Ëºï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ò»ï¿½Î¼ï¿½-1
 			flag--;
 		}
 		return false;
 	}
-	//³¤°´Í¼Æ¬
+	//ï¿½ï¿½ï¿½ï¿½Í¼Æ¬
 		public void onLongPress(MotionEvent e) {
-			//½«Á½¸ö°´Å¥ÉèÖÃ¿É¼û
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¥ï¿½ï¿½ï¿½Ã¿É¼ï¿½
 			findViewById(R.id.bg_button).setVisibility(View.VISIBLE);
 		}
 
@@ -134,7 +134,7 @@ public class SetBackgroundActivity extends Activity implements OnGestureListener
 
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				//Òþ²ØÁ½¸ö°´Å¥
+				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¥
 				findViewById(R.id.bg_button).setVisibility(View.GONE);
 			}
 
@@ -144,18 +144,18 @@ public class SetBackgroundActivity extends Activity implements OnGestureListener
 
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				//µÃµ½Ò»¸öSharedPreferences¶ÔÏó£¬ÓÃÒÔ±£´æµ±Ç°Í¼Æ¬µÄid
+				//ï¿½Ãµï¿½Ò»ï¿½ï¿½SharedPreferencesï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½æµ±Ç°Í¼Æ¬ï¿½ï¿½id
 				SharedPreferences preferences = getSharedPreferences("image",
 						MODE_PRIVATE);
 				Editor editor = preferences.edit();
 				editor.putInt("id", flag);
-				editor.commit();//Ìá½»£¬·ñÔò²»ÄÜ±£´æ³É¹¦
-				//µã»÷ÉèÖÃ°´Å¥ºóÌø×ªActivityµÄÊµÏÖ
+				editor.commit();//ï¿½á½»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü±ï¿½ï¿½ï¿½É¹ï¿½
+				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã°ï¿½Å¥ï¿½ï¿½ï¿½ï¿½×ªActivityï¿½ï¿½Êµï¿½ï¿½
 				Intent intent = new Intent();
 				intent.setClass(SetBackgroundActivity.this,
 						MainActivity.class);
 				startActivity(intent);
-				//½áÊøµ±Ç°Activity
+				//ï¿½ï¿½ï¿½ï¿½Ç°Activity
 				SetBackgroundActivity.this.finish();
 				overridePendingTransition(R.anim.push_below_in,R.anim.push_below_out);
 			}

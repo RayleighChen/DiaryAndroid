@@ -75,22 +75,22 @@ public class SearchDiaryActivity extends Activity {
 		setBackground();
 	}
 	private void setBackground() {
-		// µÃµ½µ±Ç°²¼¾Ö
+		// ï¿½Ãµï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½
 		LinearLayout layout = (LinearLayout) this.findViewById(R.id.search_diary_layout);
-		// µÃµ½id,´Ë´¦idÊÇÔÚÉèÖÃ±³¾°ÀïÃæ²úÉúµÄ£¬´Ë´¦ÔÝ²»½âÊÍ
+		// ï¿½Ãµï¿½id,ï¿½Ë´ï¿½idï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½Ë´ï¿½ï¿½Ý²ï¿½ï¿½ï¿½ï¿½ï¿½
 		int id = preferences.getInt("id", 0);
-		if (id == 0) {// id=0ËµÃ÷ÊÇ³õÊ¼»¯Ê±µÄ±³¾°
-			// ÉèÖÃ±³¾°·½·¨
+		if (id == 0) {// id=0Ëµï¿½ï¿½ï¿½Ç³ï¿½Ê¼ï¿½ï¿½Ê±ï¿½Ä±ï¿½ï¿½ï¿½
+			// ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			layout.setBackgroundResource(R.drawable.diary_view_bg);
-		} else if (id == 1) {// id=1ËµÃ÷ÓÃ»§Ñ¡ÔñÁËµÚÒ»·ùÍ¼Æ¬
+		} else if (id == 1) {// id=1Ëµï¿½ï¿½ï¿½Ã»ï¿½Ñ¡ï¿½ï¿½ï¿½Ëµï¿½Ò»ï¿½ï¿½Í¼Æ¬
 			layout.setBackgroundResource(R.drawable.diary_view_bg);
-		} else if (id == 2) {// id=2ËµÃ÷ÓÃ»§Ñ¡ÔñÁËµÚ¶þ·ùÍ¼Æ¬
+		} else if (id == 2) {// id=2Ëµï¿½ï¿½ï¿½Ã»ï¿½Ñ¡ï¿½ï¿½ï¿½ËµÚ¶ï¿½ï¿½ï¿½Í¼Æ¬
 			layout.setBackgroundResource(R.drawable.spring);
-		} else if (id == 3) {// id=3ËµÃ÷ÓÃ»§Ñ¡ÔñÁËµÚÈý·ùÍ¼Æ¬
+		} else if (id == 3) {// id=3Ëµï¿½ï¿½ï¿½Ã»ï¿½Ñ¡ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Í¼Æ¬
 			layout.setBackgroundResource(R.drawable.summer);
-		} else if (id == 4) {// id=4ËµÃ÷ÓÃ»§Ñ¡ÔñÁËµÚËÄ·ùÍ¼Æ¬
+		} else if (id == 4) {// id=4Ëµï¿½ï¿½ï¿½Ã»ï¿½Ñ¡ï¿½ï¿½ï¿½Ëµï¿½ï¿½Ä·ï¿½Í¼Æ¬
 			layout.setBackgroundResource(R.drawable.autumn);
-		} else if (id == 5) {// id=4ËµÃ÷ÓÃ»§Ñ¡ÔñÁËµÚËÄ·ùÍ¼Æ¬
+		} else if (id == 5) {// id=4Ëµï¿½ï¿½ï¿½Ã»ï¿½Ñ¡ï¿½ï¿½ï¿½Ëµï¿½ï¿½Ä·ï¿½Í¼Æ¬
 			layout.setBackgroundResource(R.drawable.winter);
 		}
 	}
@@ -124,9 +124,9 @@ public class SearchDiaryActivity extends Activity {
 				refresh();
 			}else {
 				diaries.clear();
-				// Òþ²ØÊäÈë·¨ 
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë·¨ 
 				InputMethodManager manager = (InputMethodManager) getApplicationContext().getSystemService(Context.INPUT_METHOD_SERVICE); 
-				// ÏÔÊ¾»òÕßÒþ²ØÊäÈë·¨ 
+				// ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë·¨ 
 				manager.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
 			}
 		}
@@ -271,7 +271,7 @@ builder.setItems(new String[]{getString(R.string.share),getString(R.string.trans
 								// TODO Auto-generated method stub
 								diaryDao.deleteAll();
 								refresh();
-								Toast.makeText(SearchDiaryActivity.this, "ÐÅÏ¢ÒÑÇå¿Õ", Toast.LENGTH_SHORT).show();
+								Toast.makeText(SearchDiaryActivity.this, "ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½", Toast.LENGTH_SHORT).show();
 								Intent intent = new Intent();
 								intent.setAction("com.android.info.delete");
 								SearchDiaryActivity.this.sendBroadcast(intent);

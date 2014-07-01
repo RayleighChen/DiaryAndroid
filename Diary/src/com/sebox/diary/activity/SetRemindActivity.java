@@ -79,7 +79,7 @@ public class SetRemindActivity extends Activity {
 		iFilter = new IntentFilter();
 		iFilter.addAction("com.android.set.remind.time");
 		iFilter.setPriority(Integer.MAX_VALUE);
-		// ×¢²á¹ã²¥½ÓÊÕÆ÷
+		// ×¢ï¿½ï¿½ã²¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		registerReceiver(receiver, iFilter);
 	}
 
@@ -132,13 +132,13 @@ public class SetRemindActivity extends Activity {
 										.getBroadcast(SetRemindActivity.this,
 												0, mIntent, 0);
 								AlarmManager manager;
-								// »ñÈ¡ÄÖÖÓ¹ÜÀíµÄÊµÀı
+								// ï¿½ï¿½È¡ï¿½ï¿½ï¿½Ó¹ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½
 								manager = (AlarmManager) getSystemService(ALARM_SERVICE);
-								// ÉèÖÃÄÖÖÓ
+								// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 								manager.set(AlarmManager.RTC_WAKEUP,
 										calendar.getTimeInMillis(),
 										pendingIntent);
-								// ÉèÖÃÖÜÆÚÄÖÖÓ
+								// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 								manager.setRepeating(AlarmManager.RTC_WAKEUP,
 										System.currentTimeMillis()
 												+ (10 * 1000),
@@ -204,23 +204,23 @@ public class SetRemindActivity extends Activity {
 	}
 
 	private void setBackground() {
-		// µÃµ½µ±Ç°²¼¾Ö
+		// ï¿½Ãµï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½
 		RelativeLayout layout = (RelativeLayout) this
 				.findViewById(R.id.remind_layout);
-		// µÃµ½id,´Ë´¦idÊÇÔÚÉèÖÃ±³¾°ÀïÃæ²úÉúµÄ£¬´Ë´¦Ôİ²»½âÊÍ
+		// ï¿½Ãµï¿½id,ï¿½Ë´ï¿½idï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½Ë´ï¿½ï¿½İ²ï¿½ï¿½ï¿½ï¿½ï¿½
 		int id = preferences.getInt("id", 0);
-		if (id == 0) {// id=0ËµÃ÷ÊÇ³õÊ¼»¯Ê±µÄ±³¾°
-			// ÉèÖÃ±³¾°·½·¨
+		if (id == 0) {// id=0Ëµï¿½ï¿½ï¿½Ç³ï¿½Ê¼ï¿½ï¿½Ê±ï¿½Ä±ï¿½ï¿½ï¿½
+			// ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			layout.setBackgroundResource(R.drawable.diary_view_bg);
-		} else if (id == 1) {// id=1ËµÃ÷ÓÃ»§Ñ¡ÔñÁËµÚÒ»·ùÍ¼Æ¬
+		} else if (id == 1) {// id=1Ëµï¿½ï¿½ï¿½Ã»ï¿½Ñ¡ï¿½ï¿½ï¿½Ëµï¿½Ò»ï¿½ï¿½Í¼Æ¬
 			layout.setBackgroundResource(R.drawable.diary_view_bg);
-		} else if (id == 2) {// id=2ËµÃ÷ÓÃ»§Ñ¡ÔñÁËµÚ¶ş·ùÍ¼Æ¬
+		} else if (id == 2) {// id=2Ëµï¿½ï¿½ï¿½Ã»ï¿½Ñ¡ï¿½ï¿½ï¿½ËµÚ¶ï¿½ï¿½ï¿½Í¼Æ¬
 			layout.setBackgroundResource(R.drawable.spring);
-		} else if (id == 3) {// id=3ËµÃ÷ÓÃ»§Ñ¡ÔñÁËµÚÈı·ùÍ¼Æ¬
+		} else if (id == 3) {// id=3Ëµï¿½ï¿½ï¿½Ã»ï¿½Ñ¡ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Í¼Æ¬
 			layout.setBackgroundResource(R.drawable.summer);
-		} else if (id == 4) {// id=4ËµÃ÷ÓÃ»§Ñ¡ÔñÁËµÚËÄ·ùÍ¼Æ¬
+		} else if (id == 4) {// id=4Ëµï¿½ï¿½ï¿½Ã»ï¿½Ñ¡ï¿½ï¿½ï¿½Ëµï¿½ï¿½Ä·ï¿½Í¼Æ¬
 			layout.setBackgroundResource(R.drawable.autumn);
-		} else if (id == 5) {// id=4ËµÃ÷ÓÃ»§Ñ¡ÔñÁËµÚËÄ·ùÍ¼Æ¬
+		} else if (id == 5) {// id=4Ëµï¿½ï¿½ï¿½Ã»ï¿½Ñ¡ï¿½ï¿½ï¿½Ëµï¿½ï¿½Ä·ï¿½Í¼Æ¬
 			layout.setBackgroundResource(R.drawable.winter);
 		}
 	}

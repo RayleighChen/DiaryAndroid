@@ -12,7 +12,7 @@
         android:layout_marginLeft="10dp"
         android:orientation="horizontal" >
 
-        <com.org.android.diary.view.MyWin8Button
+        <com.sebox.diary.view.MyWin8Button
             android:id="@+id/diary_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -30,7 +30,7 @@
         android:layout_below="@+id/add"
         android:orientation="vertical" >
 
-        <com.org.android.diary.view.MyWin8Button
+        <com.sebox.diary.view.MyWin8Button
             android:id="@+id/diary_look"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
         android:layout_marginLeft="10dp"
         android:layout_below="@+id/look" >
 
-        <com.org.android.diary.view.MyWin8Button
+        <com.sebox.diary.view.MyWin8Button
             android:id="@+id/diary_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/search" >
 
-        <com.org.android.diary.view.MyWin8Button
+        <com.sebox.diary.view.MyWin8Button
             android:id="@+id/diary_pass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -76,7 +76,7 @@
         android:layout_marginRight="10dp"
         android:layout_below="@+id/password" >
 
-        <com.org.android.diary.view.MyWin8Button
+        <com.sebox.diary.view.MyWin8Button
             android:id="@+id/diary_exit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

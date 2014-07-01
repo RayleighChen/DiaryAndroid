@@ -18,8 +18,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 		super(context,DBNAME,null,version);
 	}
 	/**
-	 * 该函数是子啊第一次创建数据库的时候执行，实际上是第一次
-	 * 得到SQLiteDatabase对象的时候才会被调用
+	 * 锟矫猴拷锟斤拷锟斤拷锟接帮拷锟斤拷一锟轿达拷锟斤拷锟斤拷菘锟斤拷时锟斤拷执锟叫ｏ拷实锟斤拷锟斤拷锟角碉拷一锟斤拷
+	 * 锟矫碉拷SQLiteDatabase锟斤拷锟斤拷锟绞憋拷锟脚会被锟斤拷锟斤拷
 	 */
 	@Override
 	public void onCreate(SQLiteDatabase db) {

@@ -17,7 +17,7 @@ public class FileOperate {
 				writer.write(info);
 				writer.write("\n");
 				writer.flush();
-				writer.close();// 记得关闭
+				writer.close();// 锟角得关憋拷
 
 				outStream.close();
 

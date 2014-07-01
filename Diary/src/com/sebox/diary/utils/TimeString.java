@@ -5,7 +5,7 @@ import java.util.Calendar;
 
 public class TimeString {
 	public static String getTime(){
-		long now = System.currentTimeMillis(); //微秒级当前时间  
+		long now = System.currentTimeMillis(); //微锟诫级锟斤拷前时锟斤拷  
         Calendar calendar = Calendar.getInstance();  
         calendar.setTimeInMillis(now);
         String time = calendar.get(Calendar.YEAR)+""+(calendar.get(Calendar.MONTH) + 1)+

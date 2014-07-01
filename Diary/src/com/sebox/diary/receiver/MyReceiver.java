@@ -53,17 +53,17 @@ public class MyReceiver extends BroadcastReceiver{
 				MyService.service, 0, notificationIntent, 0);
 		notification.setLatestEventInfo(context, contentTitle, contentText,
 				contentIntent);
-		// Ö¸¶¨Í¨Öª¿ÉÒÔÇå³ý
+		// Ö¸ï¿½ï¿½Í¨Öªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		notification.flags |= Notification.FLAG_AUTO_CANCEL;
-		// Ö¸¶¨Í¨Öª²»ÄÜÇå³ý
+		// Ö¸ï¿½ï¿½Í¨Öªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		notification.flags |= Notification.FLAG_NO_CLEAR;
-		// Í¨ÖªÏÔÊ¾µÄÊ±ºò²¥·ÅÄ¬ÈÏÉùÒô
+		// Í¨Öªï¿½ï¿½Ê¾ï¿½ï¿½Ê±ï¿½ò²¥·ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		notification.flags |= Notification.FLAG_SHOW_LIGHTS;
-		//ÉèÖÃÉùÒô
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		notification.defaults |=Notification.DEFAULT_SOUND;
-		//ÉèÖÃLEDµÆ
+		//ï¿½ï¿½ï¿½ï¿½LEDï¿½ï¿½
 		notification.defaults |= Notification.DEFAULT_LIGHTS;
-		// ÓÃmNotificationManagerµÄnotify·½·¨Í¨ÖªÓÃ»§Éú³É±êÌâÀ¸ÏûÏ¢Í¨Öª
+		// ï¿½ï¿½mNotificationManagerï¿½ï¿½notifyï¿½ï¿½ï¿½ï¿½Í¨Öªï¿½Ã»ï¿½ï¿½ï¿½É±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢Í¨Öª
 		manager.notify(1, notification);
 	}
 }
