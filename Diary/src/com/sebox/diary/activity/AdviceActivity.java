@@ -49,8 +49,8 @@ public class AdviceActivity extends Activity implements TextWatcher {
 		/*emailPass = (EditText)this.findViewById(R.id.user_email_pass);*/
 		adapter = new AutoTextViewAdapter(this);
 		userEmail.setAdapter(adapter);
-		userEmail.setThreshold(1);// ����1���ַ�ʱ�Ϳ�ʼ��⣬Ĭ��Ϊ2��
-		userEmail.addTextChangedListener(this);// ����autoview�ı仯
+		userEmail.setThreshold(1);// 输入1个字符时就开始检测，默认为2个
+		userEmail.addTextChangedListener(this);// 监听autoview的变化
 		adviceInfo = (EditText) this.findViewById(R.id.advice_info);
 		submit = (Button) this.findViewById(R.id.submit);
 		submit.setOnClickListener(new SubmitListener());
@@ -75,23 +75,23 @@ public class AdviceActivity extends Activity implements TextWatcher {
 	}
 
 	private void setBackground() {
-		// �õ���ǰ����
+		// 得到当前布局
 		LinearLayout layout = (LinearLayout) this
 				.findViewById(R.id.advice_layout);
-		// �õ�id,�˴�id�������ñ����������ģ��˴��ݲ�����
+		// 得到id,此处id是在设置背景里面产生的，此处暂不解释
 		int id = preferences.getInt("id", 0);
-		if (id == 0) {// id=0˵���ǳ�ʼ��ʱ�ı���
-			// ���ñ�������
+		if (id == 0) {// id=0说明是初始化时的背景
+			// 设置背景方法
 			layout.setBackgroundResource(R.drawable.diary_view_bg);
-		} else if (id == 1) {// id=1˵���û�ѡ���˵�һ��ͼƬ
+		} else if (id == 1) {// id=1说明用户选择了第一幅图片
 			layout.setBackgroundResource(R.drawable.diary_view_bg);
-		} else if (id == 2) {// id=2˵���û�ѡ���˵ڶ���ͼƬ
+		} else if (id == 2) {// id=2说明用户选择了第二幅图片
 			layout.setBackgroundResource(R.drawable.spring);
-		} else if (id == 3) {// id=3˵���û�ѡ���˵����ͼƬ
+		} else if (id == 3) {// id=3说明用户选择了第三幅图片
 			layout.setBackgroundResource(R.drawable.summer);
-		} else if (id == 4) {// id=4˵���û�ѡ���˵��ķ�ͼƬ
+		} else if (id == 4) {// id=4说明用户选择了第四幅图片
 			layout.setBackgroundResource(R.drawable.autumn);
-		} else if (id == 5) {// id=4˵���û�ѡ���˵��ķ�ͼƬ
+		} else if (id == 5) {// id=4说明用户选择了第四幅图片
 			layout.setBackgroundResource(R.drawable.winter);
 		}
 	}
@@ -103,12 +103,12 @@ public class AdviceActivity extends Activity implements TextWatcher {
 			if (!userEmail.getText().toString().trim().equals("")
 					&& !userName.getText().toString().trim().equals("")
 					&& !adviceInfo.getText().toString().trim().equals("")) {
-				String myReciver = "seeker199291@gmail.com"; //�ռ���   
-			    String mySubject = getString(R.string.theme); //����   
+				String myReciver = "seeker199291@gmail.com"; //收件人   
+			    String mySubject = getString(R.string.theme); //主题   
 			    String myBody = adviceInfo.getText().toString().trim()
-			    		+"\n�����ڣ�"+userEmail.getText().toString().trim()+"  "+userName.getText().toString().trim();   
+			    		+"\n来自于："+userEmail.getText().toString().trim()+"  "+userName.getText().toString().trim();   
 			    Intent myIntent=new Intent(android.content.Intent.ACTION_SEND);  
-	            myIntent.setType("plain/text");//�����ʼ���ʽ   
+	            myIntent.setType("plain/text");//设置邮件格式   
 	            myIntent.putExtra(android.content.Intent.EXTRA_EMAIL, myReciver);  
 	            myIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, mySubject);   
 	            myIntent.putExtra(android.content.Intent.EXTRA_TEXT, myBody);  
@@ -137,7 +137,7 @@ public class AdviceActivity extends Activity implements TextWatcher {
 	}
 
 	/**
-	 * �Զ���������б�
+	 * 自动填充邮箱列表
 	 * 
 	 * @param input
 	 */
@@ -145,12 +145,12 @@ public class AdviceActivity extends Activity implements TextWatcher {
 		String autoEmail = "";
 		if (input.length() > 0) {
 			for (int i = 0; i < AUTO_EMAILS.length; ++i) {
-				if (input.contains("@")) {// ��@����ʼ����
+				if (input.contains("@")) {// 包含“@”则开始过滤
 					String filter = input.substring(input.indexOf("@") + 1,
-							input.length());// ��ȡ����������������롰@��֮������ݹ��˳��������������
-					if (AUTO_EMAILS[i].contains(filter)) {// ��Ϲ�������
+							input.length());// 获取过滤器，即根据输入“@”之后的内容过滤出符合条件的邮箱
+					if (AUTO_EMAILS[i].contains(filter)) {// 符合过滤条件
 						autoEmail = input.substring(0, input.indexOf("@"))
-								+ AUTO_EMAILS[i];// �û����롰@��֮ǰ�����ݼ����Զ��������ݼ�Ϊ���Ľ��
+								+ AUTO_EMAILS[i];// 用户输入“@”之前的内容加上自动填充的内容即为最后的结果
 						adapter.mList.add(autoEmail);
 					}
 				} else {
@@ -171,6 +171,6 @@ public class AdviceActivity extends Activity implements TextWatcher {
 	@Override
 	public void onTextChanged(CharSequence s, int start, int before, int count) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }

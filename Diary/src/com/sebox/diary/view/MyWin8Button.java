@@ -262,7 +262,6 @@ public class MyWin8Button extends ImageView{
 			matrix.postTranslate(scaleX, 0);
 		}
 
-		
 		setImageMatrix(matrix);
 	}
 

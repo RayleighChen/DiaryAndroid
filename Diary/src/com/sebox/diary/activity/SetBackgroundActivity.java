@@ -32,27 +32,27 @@ public class SetBackgroundActivity extends Activity implements OnGestureListener
 		init();
 	}
 	private void init() {
-		//���ô����ޱ���
+		//设置窗口无标题
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		//�õ�����
+		//得到布局
 		setContentView(R.layout.background);
-		//ʵ�����ƶ�������ʵ�����ƻ���
+		//实例化手势对象，用以实现手势滑动
 		detector = new GestureDetector(this);
-		//ͨ��findViewById�����õ�Flipper�ؼ�
+		//通过findViewById方法得到Flipper控件
 		flipper = (ViewFlipper) this.findViewById(R.id.flipper);
-		//��flipper������ķ�ͼƬ
+		//在flipper中添加四幅图片
 		flipper.addView(getImageView(R.drawable.diary_view_bg));
 		flipper.addView(getImageView(R.drawable.spring));
 		flipper.addView(getImageView(R.drawable.summer));
 		flipper.addView(getImageView(R.drawable.autumn));
 		flipper.addView(getImageView(R.drawable.winter));
-		//�õ����ð�ť
+		//得到设置按钮
 		setBackground = (Button) this.findViewById(R.id.backround_set);
-		//�õ�ȡ��ť
+		//得到取消按钮
 		cancel = (Button) this.findViewById(R.id.backround_cancel);
-		//���ð�ť������
+		//设置按钮监听器
 		setBackground.setOnClickListener(new SetBackgroundListener());
-		//ȡ��ť������
+		//取消按钮监听器
 		cancel.setOnClickListener(new CancelListener());
 	}
 	private View getImageView(int id) {
@@ -71,29 +71,29 @@ public class SetBackgroundActivity extends Activity implements OnGestureListener
 
 	public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
 			float velocityY) {
-		if (e1.getX() - e2.getX() > 120) {// ���һ���
+		if (e1.getX() - e2.getX() > 120) {// 向右滑动
 			if (flipper.getDisplayedChild() == 4) {
-				//�������Ҳ���ѭ������
+				//设置往右不能循环滑动
 				flipper.stopFlipping();
 				return false;
 			} else {
-				//���ý��붯��
+				//设置进入动画
 				flipper.setInAnimation(AnimationUtils.loadAnimation(this,
 						R.anim.push_left_in));
-				//������ȥ����
+				//设置离去动画
 				flipper.setOutAnimation(AnimationUtils.loadAnimation(this,
 						R.anim.push_left_out));
-				//��ʾ��һ��ͼƬ
+				//显示下一副图片
 				flipper.showNext();
 			}
-			//���ð�ť���ɼ�
+			//设置按钮不可见
 			findViewById(R.id.bg_button).setVisibility(View.GONE);
-			//flag++ ��һ��Ĭ��Ϊ1 �˺����һ���һ�μ�+1
+			//flag++ 第一张默认为1 此后往右滑动一次加+1
 			flag++;
 
-		} else if (e2.getX() - e1.getX() > 120) {// ���󻬶�
+		} else if (e2.getX() - e1.getX() > 120) {// 向左滑动
 			if (flipper.getDisplayedChild() == 0) {
-				//����������ѭ������
+				//设置往左不能循环滑动
 				flipper.stopFlipping();
 				return false;
 			} else {
@@ -101,19 +101,19 @@ public class SetBackgroundActivity extends Activity implements OnGestureListener
 						R.anim.push_right_in));
 				flipper.setOutAnimation(AnimationUtils.loadAnimation(this,
 						R.anim.push_right_out));
-				//��ʾ��һ��ͼƬ
+				//显示上一副图片
 				flipper.showPrevious();
 			}
-			//���ð�ť���ɼ�
+			//设置按钮不可见
 			findViewById(R.id.bg_button).setVisibility(View.GONE);
-			//flag-- ��һ��Ĭ��Ϊ1 �˺����һ���һ�μ�-1
+			//flag-- 第一张默认为1 此后往右滑动一次加-1
 			flag--;
 		}
 		return false;
 	}
-	//����ͼƬ
+	//长按图片
 		public void onLongPress(MotionEvent e) {
-			//��������ť���ÿɼ�
+			//将两个按钮设置可见
 			findViewById(R.id.bg_button).setVisibility(View.VISIBLE);
 		}
 
@@ -134,7 +134,7 @@ public class SetBackgroundActivity extends Activity implements OnGestureListener
 
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				//����������ť
+				//隐藏两个按钮
 				findViewById(R.id.bg_button).setVisibility(View.GONE);
 			}
 
@@ -144,18 +144,18 @@ public class SetBackgroundActivity extends Activity implements OnGestureListener
 
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				//�õ�һ��SharedPreferences�������Ա��浱ǰͼƬ��id
+				//得到一个SharedPreferences对象，用以保存当前图片的id
 				SharedPreferences preferences = getSharedPreferences("image",
 						MODE_PRIVATE);
 				Editor editor = preferences.edit();
 				editor.putInt("id", flag);
-				editor.commit();//�ύ�������ܱ���ɹ�
-				//������ð�ť����תActivity��ʵ��
+				editor.commit();//提交，否则不能保存成功
+				//点击设置按钮后跳转Activity的实现
 				Intent intent = new Intent();
 				intent.setClass(SetBackgroundActivity.this,
 						MainActivity.class);
 				startActivity(intent);
-				//����ǰActivity
+				//结束当前Activity
 				SetBackgroundActivity.this.finish();
 				overridePendingTransition(R.anim.push_below_in,R.anim.push_below_out);
 			}
@@ -166,7 +166,7 @@ public class SetBackgroundActivity extends Activity implements OnGestureListener
 		super.onBackPressed();
 		overridePendingTransition(R.anim.push_below_in,R.anim.push_below_out);
 	}
-	
+
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		// TODO Auto-generated method stub

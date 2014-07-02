@@ -64,7 +64,7 @@ public class SearchDiaryActivity extends Activity {
 		searchInfo = (ListView)this.findViewById(R.id.search_diary_info_list);
 		search.addTextChangedListener(new SearchInfoListener());
 		back.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
@@ -75,22 +75,22 @@ public class SearchDiaryActivity extends Activity {
 		setBackground();
 	}
 	private void setBackground() {
-		// �õ���ǰ����
+		// 得到当前布局
 		LinearLayout layout = (LinearLayout) this.findViewById(R.id.search_diary_layout);
-		// �õ�id,�˴�id�������ñ����������ģ��˴��ݲ�����
+		// 得到id,此处id是在设置背景里面产生的，此处暂不解释
 		int id = preferences.getInt("id", 0);
-		if (id == 0) {// id=0˵���ǳ�ʼ��ʱ�ı���
-			// ���ñ�������
+		if (id == 0) {// id=0说明是初始化时的背景
+			// 设置背景方法
 			layout.setBackgroundResource(R.drawable.diary_view_bg);
-		} else if (id == 1) {// id=1˵���û�ѡ���˵�һ��ͼƬ
+		} else if (id == 1) {// id=1说明用户选择了第一幅图片
 			layout.setBackgroundResource(R.drawable.diary_view_bg);
-		} else if (id == 2) {// id=2˵���û�ѡ���˵ڶ���ͼƬ
+		} else if (id == 2) {// id=2说明用户选择了第二幅图片
 			layout.setBackgroundResource(R.drawable.spring);
-		} else if (id == 3) {// id=3˵���û�ѡ���˵����ͼƬ
+		} else if (id == 3) {// id=3说明用户选择了第三幅图片
 			layout.setBackgroundResource(R.drawable.summer);
-		} else if (id == 4) {// id=4˵���û�ѡ���˵��ķ�ͼƬ
+		} else if (id == 4) {// id=4说明用户选择了第四幅图片
 			layout.setBackgroundResource(R.drawable.autumn);
-		} else if (id == 5) {// id=4˵���û�ѡ���˵��ķ�ͼƬ
+		} else if (id == 5) {// id=4说明用户选择了第四幅图片
 			layout.setBackgroundResource(R.drawable.winter);
 		}
 	}
@@ -100,20 +100,20 @@ public class SearchDiaryActivity extends Activity {
 		super.onBackPressed();
 		overridePendingTransition(R.anim.push_below_in, R.anim.push_below_out);
 	}
-	
+
 	class SearchInfoListener implements TextWatcher{
 
 		@Override
 		public void afterTextChanged(Editable s) {
 			// TODO Auto-generated method stub
-			
+
 		}
 
 		@Override
 		public void beforeTextChanged(CharSequence s, int start, int count,
 				int after) {
 			// TODO Auto-generated method stub
-			
+
 		}
 
 		@Override
@@ -124,14 +124,14 @@ public class SearchDiaryActivity extends Activity {
 				refresh();
 			}else {
 				diaries.clear();
-				// �������뷨 
+				// 隐藏输入法 
 				InputMethodManager manager = (InputMethodManager) getApplicationContext().getSystemService(Context.INPUT_METHOD_SERVICE); 
-				// ��ʾ�����������뷨 
+				// 显示或者隐藏输入法 
 				manager.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
 			}
 		}
 	}
-	
+
 	private void refresh(){
 		diaryDao.dimSearch(search,diaries);
 		DiaryAdapter adapter = new DiaryAdapter(this, diaries);
@@ -141,7 +141,7 @@ public class SearchDiaryActivity extends Activity {
 		searchInfo.setOnItemLongClickListener(new ItemLongPressListener());
 		searchInfo.setSelection(0);
 	}
-	
+
 	class ItemClickListener implements OnItemClickListener{
 
 		@Override
@@ -159,7 +159,7 @@ public class SearchDiaryActivity extends Activity {
 			overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 		}
 	}
-	
+
 	class ItemLongPressListener implements OnItemLongClickListener{
 
 		@Override
@@ -171,7 +171,7 @@ public class SearchDiaryActivity extends Activity {
 			builder.setIcon(R.drawable.op);
 builder.setItems(new String[]{getString(R.string.share),getString(R.string.transmit),
 		getString(R.string.delete),getString(R.string.backups),getString(R.string.empty)}, new DialogInterface.OnClickListener() {
-				
+
 				@Override
 				public void onClick(final DialogInterface dialog, int which) {
 					// TODO Auto-generated method stub
@@ -271,7 +271,7 @@ builder.setItems(new String[]{getString(R.string.share),getString(R.string.trans
 								// TODO Auto-generated method stub
 								diaryDao.deleteAll();
 								refresh();
-								Toast.makeText(SearchDiaryActivity.this, "��Ϣ�����", Toast.LENGTH_SHORT).show();
+								Toast.makeText(SearchDiaryActivity.this, "信息已清空", Toast.LENGTH_SHORT).show();
 								Intent intent = new Intent();
 								intent.setAction("com.android.info.delete");
 								SearchDiaryActivity.this.sendBroadcast(intent);

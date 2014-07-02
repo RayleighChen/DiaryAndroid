@@ -34,7 +34,7 @@ public class MyReceiver extends BroadcastReceiver{
 			}
 		}
 	}
-	
+
 	@SuppressWarnings("deprecation")
 	private void myNotification(Context con) {
 		NotificationManager manager = (NotificationManager) MyService.service
@@ -53,17 +53,17 @@ public class MyReceiver extends BroadcastReceiver{
 				MyService.service, 0, notificationIntent, 0);
 		notification.setLatestEventInfo(context, contentTitle, contentText,
 				contentIntent);
-		// ָ��֪ͨ�������
+		// 指定通知可以清除
 		notification.flags |= Notification.FLAG_AUTO_CANCEL;
-		// ָ��֪ͨ�������
+		// 指定通知不能清除
 		notification.flags |= Notification.FLAG_NO_CLEAR;
-		// ֪ͨ��ʾ��ʱ�򲥷�Ĭ������
+		// 通知显示的时候播放默认声音
 		notification.flags |= Notification.FLAG_SHOW_LIGHTS;
-		//��������
+		//设置声音
 		notification.defaults |=Notification.DEFAULT_SOUND;
-		//����LED��
+		//设置LED灯
 		notification.defaults |= Notification.DEFAULT_LIGHTS;
-		// ��mNotificationManager��notify����֪ͨ�û���ɱ�������Ϣ֪ͨ
+		// 用mNotificationManager的notify方法通知用户生成标题栏消息通知
 		manager.notify(1, notification);
 	}
 }

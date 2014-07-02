@@ -2,7 +2,6 @@ package com.sebox.diary.db;
 
 import java.util.List;
 
-import com.sebox.diary.constant.Constant;
 import com.sebox.diary.model.Diary;
 
 import android.content.ContentValues;
@@ -19,7 +18,7 @@ public class DiaryDao {
 		helper = new DataBaseHelper(context);
 	}
 	/**
-	 * �������
+	 * 插入数据
 	 * @param diary
 	 */
 	public void insert(Diary diary){
@@ -33,9 +32,9 @@ public class DiaryDao {
 		db.insert("DIARY_INFO", null, values);
 		db.close();
 	}
-	
+
 	/**
-	 * ���idɾ��
+	 * 根据id删除
 	 * 
 	 * @param id
 	 */
@@ -46,7 +45,7 @@ public class DiaryDao {
 		db.close();
 	}
 	/**
-	 * ��ѯ
+	 * 查询
 	 * @param diaries
 	 */
 	public void query(List<Diary> diaries) {
@@ -73,14 +72,14 @@ public class DiaryDao {
 		cursor.close();
 		db.close();
 	}
-	
+
 	public void deleteAll() {
 		String delete_sql="delete from DIARY_INFO";
 		SQLiteDatabase db=helper.getWritableDatabase();
 		db.execSQL(delete_sql);
 		db.close();
 	}
-	
+
 	public void dimSearch(EditText editText,List<Diary> diaries){
 		SQLiteDatabase db=helper.getReadableDatabase();
 		Cursor cursor = db.query("DIARY_INFO", null, "diaryinfo like '%" + editText.getText().toString() + "%'", null, null, null, "id desc");

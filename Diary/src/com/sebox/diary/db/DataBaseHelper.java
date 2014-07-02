@@ -13,13 +13,13 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 	public DataBaseHelper (Context context){
 		super(context,DBNAME,null,VERSION);
 	}
-	
+
 	public DataBaseHelper (Context context,int version){
 		super(context,DBNAME,null,version);
 	}
 	/**
-	 * �ú������Ӱ���һ�δ�����ݿ��ʱ��ִ�У�ʵ�����ǵ�һ��
-	 * �õ�SQLiteDatabase�����ʱ��Żᱻ����
+	 * 该函数是子啊第一次创建数据库的时候执行，实际上是第一次
+	 * 得到SQLiteDatabase对象的时候才会被调用
 	 */
 	@Override
 	public void onCreate(SQLiteDatabase db) {
@@ -29,6 +29,6 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }

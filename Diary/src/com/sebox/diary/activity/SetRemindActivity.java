@@ -79,7 +79,7 @@ public class SetRemindActivity extends Activity {
 		iFilter = new IntentFilter();
 		iFilter.addAction("com.android.set.remind.time");
 		iFilter.setPriority(Integer.MAX_VALUE);
-		// ע��㲥������
+		// 注册广播接收器
 		registerReceiver(receiver, iFilter);
 	}
 
@@ -132,13 +132,13 @@ public class SetRemindActivity extends Activity {
 										.getBroadcast(SetRemindActivity.this,
 												0, mIntent, 0);
 								AlarmManager manager;
-								// ��ȡ���ӹ����ʵ��
+								// 获取闹钟管理的实例
 								manager = (AlarmManager) getSystemService(ALARM_SERVICE);
-								// ��������
+								// 设置闹钟
 								manager.set(AlarmManager.RTC_WAKEUP,
 										calendar.getTimeInMillis(),
 										pendingIntent);
-								// ������������
+								// 设置周期闹钟
 								manager.setRepeating(AlarmManager.RTC_WAKEUP,
 										System.currentTimeMillis()
 												+ (10 * 1000),
@@ -204,23 +204,23 @@ public class SetRemindActivity extends Activity {
 	}
 
 	private void setBackground() {
-		// �õ���ǰ����
+		// 得到当前布局
 		RelativeLayout layout = (RelativeLayout) this
 				.findViewById(R.id.remind_layout);
-		// �õ�id,�˴�id�������ñ����������ģ��˴��ݲ�����
+		// 得到id,此处id是在设置背景里面产生的，此处暂不解释
 		int id = preferences.getInt("id", 0);
-		if (id == 0) {// id=0˵���ǳ�ʼ��ʱ�ı���
-			// ���ñ�������
+		if (id == 0) {// id=0说明是初始化时的背景
+			// 设置背景方法
 			layout.setBackgroundResource(R.drawable.diary_view_bg);
-		} else if (id == 1) {// id=1˵���û�ѡ���˵�һ��ͼƬ
+		} else if (id == 1) {// id=1说明用户选择了第一幅图片
 			layout.setBackgroundResource(R.drawable.diary_view_bg);
-		} else if (id == 2) {// id=2˵���û�ѡ���˵ڶ���ͼƬ
+		} else if (id == 2) {// id=2说明用户选择了第二幅图片
 			layout.setBackgroundResource(R.drawable.spring);
-		} else if (id == 3) {// id=3˵���û�ѡ���˵����ͼƬ
+		} else if (id == 3) {// id=3说明用户选择了第三幅图片
 			layout.setBackgroundResource(R.drawable.summer);
-		} else if (id == 4) {// id=4˵���û�ѡ���˵��ķ�ͼƬ
+		} else if (id == 4) {// id=4说明用户选择了第四幅图片
 			layout.setBackgroundResource(R.drawable.autumn);
-		} else if (id == 5) {// id=4˵���û�ѡ���˵��ķ�ͼƬ
+		} else if (id == 5) {// id=4说明用户选择了第四幅图片
 			layout.setBackgroundResource(R.drawable.winter);
 		}
 	}
